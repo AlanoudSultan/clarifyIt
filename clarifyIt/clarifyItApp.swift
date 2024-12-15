@@ -12,6 +12,7 @@ struct clarifyItApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+            
         }
     }
 }
