@@ -1,3 +1,5 @@
+
+
 //
 //  ContentView.swift
 //  clarifyIt
@@ -8,14 +10,23 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var showSplash = true
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("hiii, world!")
-        }
-        .padding()
+       // ZStack{
+            if showSplash {
+                Splash()
+                    .onAppear { DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { showSplash = false } }
+            } else {
+                VStack {
+                    Image(systemName: "globe")
+                        .imageScale(.large)
+                        .foregroundStyle(.tint)
+                    Text("hiii, world!")
+                }
+            }
+      //  }
+        
+     //   .padding()
     }
 }
 
