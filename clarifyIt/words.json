@@ -1,5 +1,5 @@
 {
-    "Literature Words": [
+    "Literature": [
         {
             "Word": "Melancholy",
             "Levels": {
@@ -600,7 +600,7 @@
         }
         
     ],
-    "AcademicWords": [
+    "Academic": [
         {
             "Word": "Analysis",
             "Levels": {
@@ -1202,7 +1202,7 @@
             }
         }
     ],
-    "GeneralWords": [
+    "General": [
         {
             "Word": "Allegory",
             "Levels": {
