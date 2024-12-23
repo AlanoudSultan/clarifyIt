@@ -1,19 +1,19 @@
 {
     "Literature Words": [
         {
-            "word": "Melancholy",
-            "levels": {
-                "low": {
+            "Word": "Melancholy",
+            "Levels": {
+                "Low": {
                     "meaning": "means feeling very sad, but you don’t know exactly why. It’s a kind of quiet sadness that stays with you for a while.",
                     "synonyms": ["Sad", "Unhappy", "Down", "Heavy"],
                     "sentence": "She felt melancholy because she missed her friend, but she didn’t know how to make the sadness go away."
                 },
-                "middle": {
+                "Middle": {
                     "meaning": "is a deep and quiet sadness that doesn’t go away quickly. It feels like missing something important or feeling empty without knowing why.",
                     "synonyms": ["Depressed", "Gloomy", "Lonely", "Heartbroken"],
                     "sentence": "A sense of melancholy filled the room as they looked at old photos, remembering moments they could never have again."
                 },
-                "high": {
+                "High": {
                     "meaning": "is a profound sadness that combines quiet emotions with deep thoughts. It often comes from a sense of loss or longing and stays in the background of your mind.",
                     "synonyms": ["Despondent", "Mournful", "Sorrowful", "Wistful"],
                     "sentence": "The poet’s words were filled with melancholy, capturing the quiet sorrow of longing for a past that could never return."
@@ -21,19 +21,19 @@
             }
         },
         {
-            "word": "Euphoria",
-            "levels": {
-                "low": {
+            "Word": "Euphoria",
+            "Levels": {
+                "Low": {
                     "meaning": "means feeling very, very happy, like the best feeling ever. It’s when you feel so good, nothing can make you sad.",
                     "synonyms": ["Happiness", "Joy", "Excitement", "Good feeling"],
                     "sentence": "When she saw her favorite toy, she felt euphoria, like the happiest feeling ever."
                 },
-                "middle": {
+                "Middle": {
                     "meaning": "is an intense feeling of happiness and excitement. It’s more than just being happy—it feels like you’re on top of the world, and everything is perfect.",
                     "synonyms": ["Bliss", "Delight", "Cheerfulness", "Overjoyed"],
                     "sentence": "Winning the big prize gave him a sense of euphoria, as if everything in life was perfect at that moment."
                 },
-                "high": {
+                "High": {
                     "meaning": "is a state of extreme joy and well-being. It’s a heightened emotional state where one feels elated, energized, and detached from any negative emotions.",
                     "synonyms": ["Uplifted", "Exhilaration", "Jubilation", "Seraphic joy"],
                     "sentence": "After completing her dream project, she experienced a moment of pure euphoria, a profound and overwhelming joy that made all her struggles feel worth it."
@@ -41,19 +41,19 @@
             }
         },
         {
-            "word": "Serenity",
-            "levels": {
-                "low": {
+            "Word": "Serenity",
+            "Levels": {
+                "Low": {
                     "meaning": "means feeling very calm and peaceful. It’s like when everything is quiet, and you feel good inside.",
                     "synonyms": ["Calm", "Quiet", "Peace", "Stillness"],
                     "sentence": "Sitting by the quiet lake made her feel serenity, like everything was peaceful."
                 },
-                "middle": {
+                "Middle": {
                     "meaning": "is a state of being calm and relaxed, free from stress or worry. It’s when your mind and heart feel at ease.",
                     "synonyms": ["Tranquility", "Harmony", "Relaxation", "Comfort"],
                     "sentence": "After a long day, he found serenity in listening to soft music and watching the sunset."
                 },
-                "high": {
+                "High": {
                     "meaning": "is a profound state of tranquility and inner peace, characterized by mental clarity, emotional stability, and the absence of agitation.",
                     "synonyms": ["Equanimity", "Placidity", "Repose", "Composure"],
                     "sentence": "The mountain monastery exuded an air of serenity, where the silence and stillness brought a profound sense of inner peace."
@@ -61,19 +61,19 @@
             }
         },
         {
-            "word": "Dread",
-            "levels": {
-                "low": {
+            "Word": "Dread",
+            "Levels": {
+                "Low": {
                     "meaning": "means being very scared or worried about something bad that might happen.",
                     "synonyms": ["Fear", "Worry", "Scared", "Bad feeling"],
                     "sentence": "He felt dread when he thought about going to the doctor."
                 },
-                "middle": {
+                "Middle": {
                     "meaning": "is a strong feeling of fear or anxiety about something unpleasant that you think will happen.",
                     "synonyms": ["Anxiety", "Terror", "Apprehension", "Panic"],
                     "sentence": "She couldn’t sleep because of the dread she felt about the exam results."
                 },
-                "high": {
+                "High": {
                     "meaning": "is an intense emotional response marked by deep fear and apprehension, often accompanied by a sense of impending doom or inevitable misfortune.",
                     "synonyms": ["Foreboding", "Trepidation", "Consternation", "Alarm"],
                     "sentence": "As the storm clouds gathered, a sense of dread settled over the villagers, foretelling the chaos to come."
@@ -1807,5 +1807,4 @@
     ]
     
 }
-
 
