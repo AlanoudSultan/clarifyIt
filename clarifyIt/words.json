@@ -1,10 +1,1811 @@
-[
-    {
-        "text": "",
-        "meaning": "",
-        "synonyms": [""],
-        "example": "",
-        "difficulty": "",
-    },
-]
+{
+    "Literature Words": [
+        {
+            "word": "Melancholy",
+            "levels": {
+                "low": {
+                    "meaning": "means feeling very sad, but you don’t know exactly why. It’s a kind of quiet sadness that stays with you for a while.",
+                    "synonyms": ["Sad", "Unhappy", "Down", "Heavy"],
+                    "sentence": "She felt melancholy because she missed her friend, but she didn’t know how to make the sadness go away."
+                },
+                "middle": {
+                    "meaning": "is a deep and quiet sadness that doesn’t go away quickly. It feels like missing something important or feeling empty without knowing why.",
+                    "synonyms": ["Depressed", "Gloomy", "Lonely", "Heartbroken"],
+                    "sentence": "A sense of melancholy filled the room as they looked at old photos, remembering moments they could never have again."
+                },
+                "high": {
+                    "meaning": "is a profound sadness that combines quiet emotions with deep thoughts. It often comes from a sense of loss or longing and stays in the background of your mind.",
+                    "synonyms": ["Despondent", "Mournful", "Sorrowful", "Wistful"],
+                    "sentence": "The poet’s words were filled with melancholy, capturing the quiet sorrow of longing for a past that could never return."
+                }
+            }
+        },
+        {
+            "word": "Euphoria",
+            "levels": {
+                "low": {
+                    "meaning": "means feeling very, very happy, like the best feeling ever. It’s when you feel so good, nothing can make you sad.",
+                    "synonyms": ["Happiness", "Joy", "Excitement", "Good feeling"],
+                    "sentence": "When she saw her favorite toy, she felt euphoria, like the happiest feeling ever."
+                },
+                "middle": {
+                    "meaning": "is an intense feeling of happiness and excitement. It’s more than just being happy—it feels like you’re on top of the world, and everything is perfect.",
+                    "synonyms": ["Bliss", "Delight", "Cheerfulness", "Overjoyed"],
+                    "sentence": "Winning the big prize gave him a sense of euphoria, as if everything in life was perfect at that moment."
+                },
+                "high": {
+                    "meaning": "is a state of extreme joy and well-being. It’s a heightened emotional state where one feels elated, energized, and detached from any negative emotions.",
+                    "synonyms": ["Uplifted", "Exhilaration", "Jubilation", "Seraphic joy"],
+                    "sentence": "After completing her dream project, she experienced a moment of pure euphoria, a profound and overwhelming joy that made all her struggles feel worth it."
+                }
+            }
+        },
+        {
+            "word": "Serenity",
+            "levels": {
+                "low": {
+                    "meaning": "means feeling very calm and peaceful. It’s like when everything is quiet, and you feel good inside.",
+                    "synonyms": ["Calm", "Quiet", "Peace", "Stillness"],
+                    "sentence": "Sitting by the quiet lake made her feel serenity, like everything was peaceful."
+                },
+                "middle": {
+                    "meaning": "is a state of being calm and relaxed, free from stress or worry. It’s when your mind and heart feel at ease.",
+                    "synonyms": ["Tranquility", "Harmony", "Relaxation", "Comfort"],
+                    "sentence": "After a long day, he found serenity in listening to soft music and watching the sunset."
+                },
+                "high": {
+                    "meaning": "is a profound state of tranquility and inner peace, characterized by mental clarity, emotional stability, and the absence of agitation.",
+                    "synonyms": ["Equanimity", "Placidity", "Repose", "Composure"],
+                    "sentence": "The mountain monastery exuded an air of serenity, where the silence and stillness brought a profound sense of inner peace."
+                }
+            }
+        },
+        {
+            "word": "Dread",
+            "levels": {
+                "low": {
+                    "meaning": "means being very scared or worried about something bad that might happen.",
+                    "synonyms": ["Fear", "Worry", "Scared", "Bad feeling"],
+                    "sentence": "He felt dread when he thought about going to the doctor."
+                },
+                "middle": {
+                    "meaning": "is a strong feeling of fear or anxiety about something unpleasant that you think will happen.",
+                    "synonyms": ["Anxiety", "Terror", "Apprehension", "Panic"],
+                    "sentence": "She couldn’t sleep because of the dread she felt about the exam results."
+                },
+                "high": {
+                    "meaning": "is an intense emotional response marked by deep fear and apprehension, often accompanied by a sense of impending doom or inevitable misfortune.",
+                    "synonyms": ["Foreboding", "Trepidation", "Consternation", "Alarm"],
+                    "sentence": "As the storm clouds gathered, a sense of dread settled over the villagers, foretelling the chaos to come."
+                }
+            }
+        },
+        {
+            "Word": "Ambience",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means how a place feels, like if it’s happy, quiet, or scary.",
+                    "Synonyms": ["Vibe", "Atmosphere", "Mood", "Feeling"],
+                    "Sentence": "The room’s ambience was happy because of the bright lights and colorful balloons."
+                },
+                "Middle": {
+                    "Meaning": "The restaurant’s cozy ambience made it a perfect place for a quiet dinner.",
+                    "Synonyms": ["Environment", "Terror", "Apprehension", "Panic"],
+                    "Sentence": "She couldn’t sleep because of the dread she felt about the exam results."
+                },
+                "High": {
+                    "Meaning": "refers to the overall character or quality of a space, created by the combination of sensory elements which evoke a specific emotional or psychological response.",
+                    "Synonyms": ["Aura", "Climate", "Character", "Surrounding Atmosphere"],
+                    "Sentence": "The ambience of the art gallery, shaped by soft lighting and soothing music, created an immersive and reflective experience for visitors."
+                }
+            }
+        },
+        {
+            "Word": "Solitude",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means being alone, but in a way that feels calm and peaceful.",
+                    "Synonyms": ["Alone", "Quiet", "Away", "Separate"],
+                    "Sentence": "He sat in solitude under the tree, feeling calm and happy."
+                },
+                "Middle": {
+                    "Meaning": "is the state of being by yourself, away from others, often to think, relax, or enjoy quiet time.",
+                    "Synonyms": ["Isolation", "Seclusion", "Privacy", "Peace"],
+                    "Sentence": "After a busy day, she enjoyed the solitude of her quiet room to relax and think."
+                },
+                "High": {
+                    "Meaning": "is a deliberate and reflective state of being alone, embraced to find inner peace, focus, or personal growth.",
+                    "Synonyms": ["Retreat", "Reclusion", "Detachment", "Aloneness"],
+                    "Sentence": "The writer sought solitude in the mountains, where the silence and isolation inspired his creativity and self-reflection."
+                }
+            }
+        },
+        {
+            "Word": "Turmoil",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means everything is messy and out of control, making people feel bad or confused.",
+                    "Synonyms": ["Mess", "Trouble", "Chaos", "Confusion"],
+                    "Sentence": "The classroom was in turmoil when the teacher left, with everyone shouting and running."
+                },
+                "Middle": {
+                    "Meaning": "is a state of great confusion, stress, or trouble where things feel chaotic and hard to manage.",
+                    "Synonyms": ["Disorder", "Commotion", "Distress", "Havoc"],
+                    "Sentence": "After the bad news, her mind was in turmoil, and she couldn’t focus on anything."
+                },
+                "High": {
+                    "Meaning": "refers to a profound state of disorder, chaos, or instability, often accompanied by emotional or physical upheaval.",
+                    "Synonyms": ["Upheaval", "Pandemonium", "Disarray", "Tumult"],
+                    "Sentence": "The political crisis plunged the nation into turmoil, with protests erupting and systems breaking down."
+                }
+            }
+        },
+        {
+            "Word": "Nostalgia",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means feeling happy and a little sad when you think about something nice from the past.",
+                    "Synonyms": ["Memory", "Missing", "Old times", "Longing"],
+                    "Sentence": "Seeing her old toys gave her a feeling of nostalgia, making her smile and feel a little sad."
+                },
+                "Middle": {
+                    "Meaning": "is a feeling of longing and warmth when remembering good times or things from the past.",
+                    "Synonyms": ["Remembrance", "Sentiment", "Homesickness", "Yearning"],
+                    "Sentence": "Listening to his favorite childhood songs filled him with nostalgia, reminding him of simpler and happier times."
+                },
+                "High": {
+                    "Meaning": "is a complex emotional state, combining joy and melancholy, triggered by recalling cherished memories or experiences from the past, often accompanied by a yearning to relive them.",
+                    "Synonyms": ["Melancholy", "Reverie", "Pining", "Retrospection"],
+                    "Sentence": "The scent of the sea air evoked a deep sense of nostalgia, transporting her back to summers spent on the shore with her family."
+                }
+            }
+        },
+        {
+            "Word": "Bliss",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means feeling very, very happy, like everything is perfect and you have no worries.",
+                    "Synonyms": ["Happiness", "Joy", "Peace", "Goodness"],
+                    "Sentence": "Eating her favorite ice cream made her feel pure bliss."
+                },
+                "Middle": {
+                    "Meaning": "is a state of complete happiness and joy, where you feel calm, peaceful, and extremely satisfied.",
+                    "Synonyms": ["Delight", "Contentment", "Pleasure", "Euphoria"],
+                    "Sentence": "Sitting on the beach, watching the sunset, brought him a moment of true bliss."
+                },
+                "High": {
+                    "Meaning": "refers to an elevated state of pure joy and contentment, often described as an intense and perfect sense of happiness, free from any negative emotions or concerns.",
+                    "Synonyms": ["Ecstasy", "Rapture", "Beatitude", "Felicity"],
+                    "Sentence": "After years of hard work, achieving her dream job filled her with a sense of unparalleled bliss, as if every challenge had led to this perfect moment."
+                }
+            }
+        },
+        {
+            "Word": "Despair",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means feeling very, very sad and thinking that nothing will get better.",
+                    "Synonyms": ["Sadness", "Hopelessness", "Crying", "Worry"],
+                    "Sentence": "When he lost his favorite toy, he felt despair and started crying."
+                },
+                "Middle": {
+                    "Meaning": "is the feeling of losing all hope, like when you think there is no way to fix a problem.",
+                    "Synonyms": ["Misery", "Defeat", "Grief", "Sorrow"],
+                    "Sentence": "After trying so many times and failing, she sat down in despair, not knowing what to do next."
+                },
+                "High": {
+                    "Meaning": "is a deep emotional state of hopelessness and defeat, where one feels that all efforts are futile and there is no possibility of improvement or relief.",
+                    "Synonyms": ["Hopelessness", "Melancholy", "Despondency", "Anguish"],
+                    "Sentence": "Faced with constant setbacks and no support, he fell into deep despair, convinced that his dreams were beyond reach."
+                }
+            }
+        },{
+            "Word": "Elation",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means feeling very, very happy, like when something really good happens.",
+                    "Synonyms": ["Happiness", "Joy", "Excitement", "Cheer"],
+                    "Sentence": "He felt elation when he got a new toy, and he couldn’t stop smiling."
+                },
+                "Middle": {
+                    "Meaning": "is a strong feeling of happiness and excitement, like when you achieve something important or hear great news.",
+                    "Synonyms": ["Delight", "Euphoria", "Gladness", "Jubilation"],
+                    "Sentence": "She was filled with elation when she heard that she passed the exam with high grades."
+                },
+                "High": {
+                    "Meaning": "is an intense emotional state characterized by overwhelming joy, excitement, and a sense of triumph, often resulting from a significant achievement.",
+                    "Synonyms": ["Exhilaration", "Ecstasy", "Triumph", "Rapture"],
+                    "Sentence": "Winning the championship brought him a sense of pure elation, as years of hard work and dedication finally paid off."
+                }
+            }
+        },
+        {
+            "Word": "Tranquility",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means feeling very calm and quiet, with nothing to worry about.",
+                    "Synonyms": ["Calm", "Quiet", "Peace", "Rest"],
+                    "Sentence": "Sitting by the quiet river gave him a feeling of tranquility."
+                },
+                "Middle": {
+                    "Meaning": "is a state of peace and quiet, where everything feels calm and relaxed.",
+                    "Synonyms": ["Stillness", "Serenity", "Silence", "Relaxation"],
+                    "Sentence": "She enjoyed the tranquility of the garden, where everything was calm and peaceful."
+                },
+                "High": {
+                    "Meaning": "refers to a deep state of calmness, free from noise, stress, or disturbance, often associated with peaceful surroundings and a clear state of mind.",
+                    "Synonyms": ["Equanimity", "Placidness", "Repose", "Hush"],
+                    "Sentence": "The mountain cabin offered a perfect sense of tranquility, with its stillness and the soft sounds of nature soothing her mind."
+                }
+            }
+        },{
+            "Word": "Oppression",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means being treated very unfairly or feeling very heavy and sad because of it.",
+                    "Synonyms": ["Unfairness", "Pain", "Sadness", "Control"],
+                    "Sentence": "The workers felt oppression because they were treated unfairly and not paid well."
+                },
+                "Middle": {
+                    "Meaning": "is when a person or group is treated badly, controlled, or made to feel hopeless and weighed down.",
+                    "Synonyms": ["Injustice", "Suffering", "Domination", "Hardship"],
+                    "Sentence": "Living under constant oppression, the people felt trapped and unable to speak freely."
+                },
+                "High": {
+                    "Meaning": "refers to prolonged and unjust treatment or control, often by a more powerful group or system, leading to feelings of helplessness, suffering.",
+                    "Synonyms": ["Subjugation", "Tyranny", "Suppression", "Exploitation"],
+                    "Sentence": "The novelist depicted the oppression of marginalized communities, highlighting the emotional and societal burdens caused by systemic injustice."
+                }
+            }
+        },
+        {
+            "Word": "Suspense",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means feeling excited and a little worried because you don’t know what will happen next.",
+                    "Synonyms": ["Waiting", "Nervousness", "Guessing", "Tension"],
+                    "Sentence": "I felt suspense when I waited to see what was behind the door."
+                },
+                "Middle": {
+                    "Meaning": "is the feeling of nervousness or excitement when you are waiting for something to happen, especially in a story or movie.",
+                    "Synonyms": ["Anxiety", "Anticipation", "Uncertainty", "Excitement"],
+                    "Sentence": "The movie created so much suspense that I couldn’t wait to see how it would end."
+                },
+                "High": {
+                    "Meaning": "is a literary or emotional state of anticipation and uncertainty, where the audience is kept on edge, eagerly awaiting the outcome of events.",
+                    "Synonyms": ["Foreboding", "Apprehension", "Tension", "Expectation"],
+                    "Sentence": "The author masterfully built suspense throughout the novel, keeping readers on edge as they anticipated the protagonist’s fate."
+                }
+            }
+        },
+        {
+            "Word": "Exuberance",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means feeling very, very happy and full of energy.",
+                    "Synonyms": ["Happiness", "Excitement", "Cheerfulness", "Energy"],
+                    "Sentence": "The little boy’s exuberance showed when he jumped and laughed at the playground."
+                },
+                "Middle": {
+                    "Meaning": "is a strong feeling of excitement, joy, and being full of life and energy.",
+                    "Synonyms": ["Joyfulness", "Liveliness", "Enthusiasm", "High spirits"],
+                    "Sentence": "Her exuberance was clear as she cheered loudly and smiled after winning the race."
+                },
+                "High": {
+                    "Meaning": "is a state of overflowing enthusiasm, energy, and positivity, often expressed through lively behavior, bright emotions.",
+                    "Synonyms": ["Vivacity", "Zest", "Buoyancy"],
+                    "Sentence": "His exuberance was contagious, as his lively energy and endless enthusiasm lit up the entire room."
+                }
+            }
+        },
+        {
+            "Word": "Yearning",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means wanting something very, very much and feeling sad because you don’t have it.",
+                    "Synonyms": ["Wanting", "Missing", "Wishing", "Longing"],
+                    "Sentence": "He felt a yearning to see his mom when he was far away."
+                },
+                "Middle": {
+                    "Meaning": "is a strong feeling of wanting something you miss or cannot have, and it stays on your mind.",
+                    "Synonyms": ["Desire", "Craving", "Deep need", "Strong feeling"],
+                    "Sentence": "She had a deep yearning to return to her childhood home where she felt safe and happy."
+                },
+                "High": {
+                    "Meaning": "is a deep and emotional longing or desire for something distant, unattainable, or lost, often accompanied by a sense of sadness or nostalgia.",
+                    "Synonyms": ["Longing", "Pining", "Ache", "Aspiration"],
+                    "Sentence": "His heart was filled with an unshakable yearning for a life of purpose and connection, far from the emptiness he felt."
+                }
+            }
+        },
+        {
+            "Word": "Foreboding",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means feeling scared or worried because you think something bad will happen.",
+                    "Synonyms": ["Worry", "Fear", "Bad feeling", "Scared"],
+                    "Sentence": "He felt foreboding when the sky turned dark, like something bad was coming."
+                },
+                "Middle": {
+                    "Meaning": "is a strong feeling of fear or worry that something bad is about to happen soon.",
+                    "Synonyms": ["Dread", "Anxiety", "Unease", "Apprehension"],
+                    "Sentence": "As she walked into the empty house, a sense of foreboding made her heartbeat faster."
+                },
+                "High": {
+                    "Meaning": "is a profound sense of apprehension or dread, marked by the intuition or belief that something harmful or negative is imminent.",
+                    "Synonyms": ["Premonition", "Ominousness", "Portent", "Intuition"],
+                    "Sentence": "The ominous silence in the forest filled him with a deep foreboding, as if nature itself was warning of an impending danger."
+                }
+            }
+        },
+        {
+            "Word": "Awe",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means feeling amazed and a little scared because something is very big or special.",
+                    "Synonyms": ["Wonder", "Surprise", "Respect", "Big feeling"],
+                    "Sentence": "She looked at the big, shining building with awe, feeling amazed and a little scared."
+                },
+                "Middle": {
+                    "Meaning": "is a feeling of great respect and wonder, often mixed with a little fear, when you see or experience something powerful or amazing.",
+                    "Synonyms": ["Admiration", "Amazement", "Fear", "Reverence"],
+                    "Sentence": "He felt a sense of awe as he stood at the edge of the Grand Canyon, staring at its endless beauty and size."
+                },
+                "High": {
+                    "Meaning": "is a deep emotional response to something amazing or powerful, mixing wonder, respect, and a hint of fear.",
+                    "Synonyms": ["Veneration", "Astonishment", "Sublimity", "Majesty"],
+                    "Sentence": "He felt awe when he stood before the Grand Mosque in Mecca, amazed by its size and the beauty of its design."
+                }
+            }
+        },
+        {
+            "Word": "Gloom",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means feeling very sad or being in a dark, unhappy place.",
+                    "Synonyms": ["Sadness", "Darkness", "Unhappiness", "Loneliness"],
+                    "Sentence": "He felt gloom when the rain started, and the day became dark and sad."
+                },
+                "Middle": {
+                    "Meaning": "is a feeling of sadness or hopelessness, often linked with darkness or things that feel heavy.",
+                    "Synonyms": ["Melancholy", "Depression", "Misery", "Despair"],
+                    "Sentence": "There was a sense of gloom in the house after they heard the bad news."
+                },
+                "High": {
+                    "Meaning": "is a state of emotional or physical darkness, characterized by pervasive sadness, despair, or lack of hope.",
+                    "Synonyms": ["Sorrow", "Dejection", "Somberness", "Despondency"],
+                    "Sentence": "The city was shrouded in gloom, both from the gray skies above and the heavy sadness in the hearts of its people."
+                }
+            }
+        },
+        {
+            "Word": "Radiance",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means something that shines and looks very bright and beautiful.",
+                    "Synonyms": ["Light", "Shine", "Glow", "Bright"],
+                    "Sentence": "The sun’s radiance made the sky look bright and warm."
+                },
+                "Middle": {
+                    "Meaning": "is the bright and glowing light coming from something or someone, showing beauty or happiness.",
+                    "Synonyms": ["Luminosity", "Sparkle", "Brightness", "Glitter"],
+                    "Sentence": "Her smile had a radiance that lit up the room and made everyone feel happy."
+                },
+                "High": {
+                    "Meaning": "refers to a quality of emitting light or warmth, often symbolizing brilliance, vitality, or an inner glow that captivates.",
+                    "Synonyms": ["Brilliance", "Luster", "Effulgence", "Illumination"],
+                    "Sentence": "The radiance of the full moon bathed the landscape in a soft, ethereal glow, evoking a sense of peace and wonder."
+                }
+            }
+        },
+        {
+            "Word": "Resonance",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means a sound that stays strong and keeps going, or something that makes you feel something special.",
+                    "Synonyms": ["Connection", "Echo", "Meaning", "Impact"],
+                    "Sentence": "The story had a strong resonance with him because it reminded him of his own life."
+                },
+                "Middle": {
+                    "Meaning": "is when a sound or idea has a strong effect that lasts and feels important or meaningful to you.",
+                    "Synonyms": ["Reverberation", "Impact", "Chime", "Symphony"],
+                    "Sentence": "Her words had a deep resonance, making everyone think about their meaning long after she spoke."
+                },
+                "High": {
+                    "Meaning": "refers to a phenomenon where an idea, or emotion amplifies and sustains its impact.",
+                    "Synonyms": ["Reverberance", "Amplification", "Emotional connection", "Illumination"],
+                    "Sentence": "The poem’s emotional resonance lingered in his thoughts, evoking memories and feelings he hadn’t explored in years."
+                }
+            }
+        },
+        {
+            "Word": "Ephemeral",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means something that doesn’t last long and goes away quickly.",
+                    "Synonyms": ["Short-lived", "Quick", "Temporary", "Fleeting"],
+                    "Sentence": "The rainbow was ephemeral, and it disappeared after a few minutes."
+                },
+                "Middle": {
+                    "Meaning": "is something temporary or short-lived, like it only happens for a moment and then disappears.",
+                    "Synonyms": ["Brief", "Momentary", "Passing", "Transitory"],
+                    "Sentence": "The happiness she felt during the party was ephemeral, lasting only until the music stopped."
+                },
+                "High": {
+                    "Meaning": "refers to something that is short-lived or temporary, lasting only for a brief time before it disappears.",
+                    "Synonyms": ["Evanescent", "Fleeting", "Short-lived", "Impermanent"],
+                    "Sentence": "The artist captured the ephemeral beauty of the sunrise, knowing its colors would vanish within moments."
+                }
+            }
+        },
+        {
+            "Word": "Lament",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means feeling very sad and crying or talking about something bad that happened.",
+                    "Synonyms": ["Cry", "Sadness", "Miss", "Hurt"],
+                    "Sentence": "He began to lament when he lost his favorite toy, feeling very sad."
+                },
+                "Middle": {
+                    "Meaning": "is showing deep sadness or regret, often by crying, speaking, or writing about what was lost or hurt.",
+                    "Synonyms": ["Grieve", "Mourn", "Cry", "Weep"],
+                    "Sentence": "She wrote a poem to lament the loss of her childhood home, expressing her sadness."
+                },
+                "High": {
+                    "Meaning": "is an intense expression of grief, sorrow, or regret, often articulated through words, actions, or art to mourn a loss or misfortune.",
+                    "Synonyms": ["Bewail", "Hurt", "Regret", "Cry"],
+                    "Sentence": "They sang a song to lament the loss of their friend, showing how sad they felt."
+                }
+            }
+        },
+        {
+            "Word": "Hysteria",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means feeling very, very upset or excited and not being able to stay calm.",
+                    "Synonyms": ["Fear", "Excitement", "Panic", "Crying"],
+                    "Sentence": "When the balloon popped, the kids screamed in hysteria and ran around."
+                },
+                "Middle": {
+                    "Meaning": "is an extreme reaction of fear, excitement, or panic where people lose control of their emotions.",
+                    "Synonyms": ["Chaos", "Frenzy", "Panic", "Distress"],
+                    "Sentence": "There was a moment of hysteria when the fire alarm went off, and people rushed to the exits."
+                },
+                "High": {
+                    "Meaning": "is an intense, uncontrollable emotional response, often characterized by irrational behavior, overwhelming fear, or collective panic.",
+                    "Synonyms": ["Fear", "Panic", "Mania", "Agitation"],
+                    "Sentence": "The sudden announcement of the emergency triggered widespread hysteria, with crowds panicking."
+                }
+            }
+        },
+        {
+            "Word": "Solace",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means feeling better when you are sad because someone or something helps you feel calm and happy again.",
+                    "Synonyms": ["Support", "Peace", "Help", "Comfort"],
+                    "Sentence": "He found solace in his favorite toy when he felt sad."
+                },
+                "Middle": {
+                    "Meaning": "is comfort or relief that you find when you are sad, often from a person, place, or activity that makes you feel better.",
+                    "Synonyms": ["Healing", "Support", "Relief", "Ease"],
+                    "Sentence": "She took a walk by the beach to find solace and calm her mind after a tough day."
+                },
+                "High": {
+                    "Meaning": "refers to emotional or spiritual comfort and relief during times of distress or sadness, often derived from support, understanding, or a meaningful experience.",
+                    "Synonyms": ["Relief", "Peace", "Support", "Comfort"],
+                    "Sentence": "In the quiet of the library, he discovered a deep sense of solace, as the peaceful atmosphere eased his worries."
+                }
+            }
+        },
+        {
+            "Word": "Vividness",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means something is very clear, bright, and easy to see or imagine.",
+                    "Synonyms": ["Clearness", "Liveliness", "Brightness", "Detail"],
+                    "Sentence": "The drawing’s vividness made the colors look very bright and real."
+                },
+                "Middle": {
+                    "Meaning": "is the quality of being so clear and detailed that it feels very real, like a picture in your mind.",
+                    "Synonyms": ["Clarity", "Detail", "Liveliness", "Brightness"],
+                    "Sentence": "Her story had so much vividness that I could picture everything she described in my mind."
+                },
+                "High": {
+                    "Meaning": "refers to how clear, bright, or detailed something is, whether it’s an image, memory, or description, making it feel real and easy to imagine or sense.",
+                    "Synonyms": ["Clarity", "Detail", "Liveliness", "Brightness"],
+                    "Sentence": "The vividness of his childhood memories brought every detail to life, as if he were experiencing them all over again."
+                }
+            }
+        },
+        {
+            "Word": "Epiphany",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means suddenly understanding something very important or realizing something you didn’t know before.",
+                    "Synonyms": ["Understanding", "Discovery", "Realization", "Idea"],
+                    "Sentence": "She had an epiphany when she realized she could solve the puzzle by looking at it in a new way."
+                },
+                "Middle": {
+                    "Meaning": "is a moment when you suddenly have a big idea or realize something meaningful that changes how you see things.",
+                    "Synonyms": ["Insight", "Awakening", "Clarity", "Recognition"],
+                    "Sentence": "While walking in the park, he had an epiphany about what he truly wanted to do with his life."
+                },
+                "High": {
+                    "Meaning": "refers to a sudden, profound realization or insight, often arriving unexpectedly, that transforms your understanding of a situation or yourself in a deeply meaningful way.",
+                    "Synonyms": ["Clarity", "Understanding", "Discovery", "Insight"],
+                    "Sentence": "In the quiet of the evening, she experienced an epiphany that reshaped her understanding of her past choices and guided her toward a new path."
+                }
+            }
+        },
+        {
+            "Word": "Whimsy",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means something fun, silly, or different that makes you happy.",
+                    "Synonyms": ["Happiness", "Fun", "Playfulness", "Imagination"],
+                    "Sentence": "The bright colors and funny shapes of the toys were full of whimsy, making the kids laugh."
+                },
+                "Middle": {
+                    "Meaning": "is a playful or unusual idea, often imaginative and light-hearted, making things feel fun or magical.",
+                    "Synonyms": ["Charm", "Fun", "Playfulness", "Imagination"],
+                    "Sentence": "The garden’s design had a touch of whimsy, with its unusual paths and playful statues."
+                },
+                "High": {
+                    "Meaning": "refers to a quality of playful imagination or fanciful creativity, often marked by unexpected or eccentric ideas that bring charm and delight.",
+                    "Synonyms": ["Charm", "Fun", "Playfulness", "Imagination"],
+                    "Sentence": "The artist’s work showed whimsy, with fun and playful details that made people smile and feel happy."
+                }
+            }
+        },
+        {
+            "Word": "Majesty",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means something very big, beautiful, or special that makes you feel amazed.",
+                    "Synonyms": ["Specialness", "Beauty", "Greatness", "Power"],
+                    "Sentence": "The big, beautiful mountain showed its majesty, making everyone say Wow!"
+                },
+                "Middle": {
+                    "Meaning": "is the quality of being grand, impressive, or beautiful in a way that inspires respect and wonder.",
+                    "Synonyms": ["Specialness", "Greatness", "Power", "Beauty"],
+                    "Sentence": "The majesty of the ancient castle impressed everyone with its beauty and size."
+                },
+                "High": {
+                    "Meaning": "refers to a dignified and awe-inspiring quality of greatness, often associated with grandeur, beauty, or power that commands admiration.",
+                    "Synonyms": ["Regality", "Sublimity", "Excellence", "Greatness"],
+                    "Sentence": "The mosque’s towering minarets and intricate designs reflected its majesty, filling him with awe and respect."
+                }
+            }
+        },
+        {
+            "Word": "Pathos",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means a feeling of sadness or sympathy when you hear a story or see something emotional.",
+                    "Synonyms": ["Sadness", "Emotion", "Hurt", "Tears"],
+                    "Sentence": "The sad movie used pathos to make everyone cry."
+                },
+                "Middle": {
+                    "Meaning": "is the power in writing, art, or speech that makes people feel strong emotions, like sadness or compassion.",
+                    "Synonyms": ["Sympathy", "Compassion", "Sorrow", "Sadness"],
+                    "Sentence": "The artist’s painting was full of pathos, showing the pain of people in hard times."
+                },
+                "High": {
+                    "Meaning": "refers to a rhetorical or artistic quality that evokes deep emotional responses, particularly sorrow, pity, or empathy.",
+                    "Synonyms": ["Sympathy", "Compassion", "Sorrow", "Sadness"],
+                    "Sentence": "The speaker’s heartfelt story evoked deep pathos, leaving the audience moved by the shared struggles of humanity."
+                }
+            }
+        }
+        
+    ],
+    "AcademicWords": [
+        {
+            "Word": "Analysis",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means looking at something carefully to understand it better.",
+                    "Synonyms": ["Test", "Look closely", "Check", "Study"],
+                    "Sentence": "We did an analysis of the story to understand its main idea."
+                },
+                "Middle": {
+                    "Meaning": "is the process of breaking something into smaller parts to study how those parts work together or what they mean.",
+                    "Synonyms": ["Examination", "Review", "Inspection", "Breakdown"],
+                    "Sentence": "The teacher asked us to do an analysis of the poem to find the hidden meanings in its words."
+                },
+                "High": {
+                    "Meaning": "refers to a detailed examination of components or elements of a subject to uncover patterns, relationships, or meanings, often to draw deeper conclusions or insights.",
+                    "Synonyms": ["Evaluation", "Interpretation", "Examination", "Review"],
+                    "Sentence": "The researcher’s analysis of the data revealed unexpected patterns, providing new insights into the study."
+                }
+            }
+        },
+        {
+            "Word": "Synthesis",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means putting things together to make something new.",
+                    "Synonyms": ["Combine", "Put together", "Join", "Mix"],
+                    "Sentence": "The teacher asked us to do a synthesis by putting our ideas together to make one big project."
+                },
+                "Middle": {
+                    "Meaning": "is the process of combining different ideas, parts, or information to create something new and complete.",
+                    "Synonyms": ["Integration", "Connection", "Blending", "Combine"],
+                    "Sentence": "The report was a synthesis of research from different books, combining all the information into one clear summary."
+                },
+                "High": {
+                    "Meaning": "refers to the integration of multiple components, concepts, or ideas into a cohesive whole, often creating a new understanding or perspective.",
+                    "Synonyms": ["Integration", "Connection", "Blending", "Combine"],
+                    "Sentence": "The scientist’s work involved the synthesis of complex theories and experimental data, resulting in a groundbreaking new model."
+                }
+            }
+        },
+        {
+            "Word": "Hypothesis",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means an idea you think might be true, and you test it to find out.",
+                    "Synonyms": ["Guess", "Idea", "Thought", "Test"],
+                    "Sentence": "The student made a hypothesis that plants grow faster with more sunlight and tested it."
+                },
+                "Middle": {
+                    "Meaning": "is a guess or idea you make based on some information, and then you test it to see if it’s correct.",
+                    "Synonyms": ["Assumption", "Prediction", "Theory", "Suggestion"],
+                    "Sentence": "Her hypothesis was that students who study in groups perform better, so she designed an experiment to check if it was true."
+                },
+                "High": {
+                    "Meaning": "is a proposed explanation or prediction based on limited evidence, intended to be tested through experimentation or observation.",
+                    "Synonyms": ["Assumption", "Prediction", "Theory", "Suggestion"],
+                    "Sentence": "The scientist’s hypothesis suggested a direct link between diet and energy levels, which she rigorously tested through controlled experiments."
+                }
+            }
+        },
+        {
+            "Word": "Empirical",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means learning or knowing something by seeing, doing, or testing it.",
+                    "Synonyms": ["Tested", "Tried", "Measured", "Practical"],
+                    "Sentence": "The scientist used empirical tests to see how plants grow with different amounts of water."
+                },
+                "Middle": {
+                    "Meaning": "is based on real experiences, observations, or experiments, not just ideas or theories.",
+                    "Synonyms": ["Experimental", "Practical", "Measured", "Tested"],
+                    "Sentence": "Her findings were based on empirical data she collected from observing how students performed in different environments."
+                },
+                "High": {
+                    "Meaning": "refers to knowledge derived from direct observation, experience, or experimentation, grounded in measurable evidence.",
+                    "Synonyms": ["Experimental", "Practical", "Measured", "Tested"],
+                    "Sentence": "The theory was supported by empirical evidence gathered through years of rigorous experimentation and careful observation."
+                }
+            }
+        },
+        {
+            "Word": "Paradigm",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means a way of thinking or doing something that people follow.",
+                    "Synonyms": ["Example", "Model", "Plan", "Approach"],
+                    "Sentence": "The school changed its paradigm for teaching to make learning more fun for kids."
+                },
+                "Middle": {
+                    "Meaning": "is a model or example that shows how something works or how people should think about it.",
+                    "Synonyms": ["Example", "Framework", "Approach", "Model"],
+                    "Sentence": "Her research introduced a new paradigm for understanding how people learn languages."
+                },
+                "High": {
+                    "Meaning": "refers to a dignified and awe-inspiring quality of greatness, often associated with grandeur, beauty, or power that commands admiration.",
+                    "Synonyms": ["Example", "Framework", "Approach", "Model"],
+                    "Sentence": "The shift from traditional medicine to personalized healthcare represents a significant change in the paradigm of modern science."
+                }
+            }
+        },
+        {
+            "Word": "Quantitative",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means using numbers to measure or count things.",
+                    "Synonyms": ["Counting", "Numbers", "Countable", "Measured"],
+                    "Sentence": "The survey collected quantitative data, like the number of students who enjoy math."
+                },
+                "Middle": {
+                    "Meaning": "is about collecting and using numerical data to understand or explain something.",
+                    "Synonyms": ["Measured", "Numerical", "Statistical", "Countable"],
+                    "Sentence": "The study used quantitative methods to measure how many hours students studied each week."
+                },
+                "High": {
+                    "Meaning": "refers to a method of research or analysis focused on numerical measurement and statistical techniques to examine relationships, trends, or patterns in data.",
+                    "Synonyms": ["Measured", "Numerical", "Statistical", "Countable"],
+                    "Sentence": "The research focused on quantitative analysis, using statistical data to evaluate the effectiveness of the new teaching method."
+                }
+            }
+        },
+        {
+            "Word": "Qualitative",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means looking at things by describing them, not using numbers.",
+                    "Synonyms": ["Descriptive", "Non-numerical", "Analytical", "Illustrative"],
+                    "Sentence": "The teacher used a qualitative method by asking students to describe what they liked about the lesson."
+                },
+                "Middle": {
+                    "Meaning": "is about studying or understanding things by looking at their qualities, like how they look or behave, instead of measuring them with numbers.",
+                    "Synonyms": ["Descriptive", "Non-numerical", "Analytical", "Illustrative"],
+                    "Sentence": "The scientist used qualitative research to study how people’s emotions change when they listen to music."
+                },
+                "High": {
+                    "Meaning": "is about studying or understanding things by looking at their qualities, like how they look or behave, instead of measuring them with numbers.",
+                    "Synonyms": ["Descriptive", "Non-numerical", "Analytical", "Illustrative"],
+                    "Sentence": "The researcher used qualitative interviews to understand people’s personal experiences."
+                }
+            }
+        },
+        {
+            "Word": "Ethics",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means knowing what is right and wrong and choosing to do the right thing.",
+                    "Synonyms": ["Morals", "Rules", "Integrity", "Principles"],
+                    "Sentence": "The teacher talked about ethics, explaining why sharing is the right thing to do."
+                },
+                "Middle": {
+                    "Meaning": "is a set of rules or ideas about what is good and bad, helping people decide how to act in different situations.",
+                    "Synonyms": ["Morals", "Rules", "Integrity", "Principles"],
+                    "Sentence": "Doctors follow ethics to make sure they treat their patients fairly and do no harm."
+                },
+                "High": {
+                    "Meaning": "refers to the study and application of moral principles and values that guide human behavior.",
+                    "Synonyms": ["Morals", "Rules", "Integrity", "Principles"],
+                    "Sentence": "The debate raised complex questions about ethics, focusing on balancing personal freedom with social responsibility."
+                }
+            }
+        },
+        {
+            "Word": "Theory",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means an idea about how or why something happens.",
+                    "Synonyms": ["Guess", "Idea", "Belief", "Plan"],
+                    "Sentence": "She had a theory that plants grow faster when they get more sunlight."
+                },
+                "Middle": {
+                    "Meaning": "is an explanation for something based on facts, research, or observations that helps us understand how it works.",
+                    "Synonyms": ["Explanation", "Concept", "Hypothesis", "Principle"],
+                    "Sentence": "The scientist tested his theory about how animals adapt to cold climates."
+                },
+                "High": {
+                    "Meaning": "refers to explanation of natural or social phenomena, supported by evidence and reasoning.",
+                    "Synonyms": ["Explanation", "Concept", "Hypothesis", "Principle"],
+                    "Sentence": "Einstein’s theory of relativity revolutionized physics by providing a new framework for understanding time and space."
+                }
+            }
+        },
+        {
+            "Word": "Methodology",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means the way or steps you follow to do something.",
+                    "Synonyms": ["Steps", "Way", "Process", "Plan"],
+                    "Sentence": "The teacher showed us a methodology for solving math problems step by step."
+                },
+                "Middle": {
+                    "Meaning": "is a set of rules or steps used in a study or project to make sure it’s done in the right way.",
+                    "Synonyms": ["Steps", "Process", "Approach", "Framework"],
+                    "Sentence": "The scientist used a clear methodology to collect and analyze the data in her experiment."
+                },
+                "High": {
+                    "Meaning": "refers to the systematic framework or approach that outlines the methods, principles, and processes used in research or analysis.",
+                    "Synonyms": ["Protocol", "Techniques", "Strategy", "Structure"],
+                    "Sentence": "The study’s methodology explained how data was collected and analyzed to ensure accurate findings."
+                }
+            }
+        },
+        {
+            "Word": "Significance",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means how important something is.",
+                    "Synonyms": ["Importance", "Worth", "Value", "Priority"],
+                    "Sentence": "The teacher explained the significance of doing homework to help us learn better."
+                },
+                "Middle": {
+                    "Meaning": "is the importance or value of something, especially how it affects or changes things.",
+                    "Synonyms": ["Importance", "Worth", "Value", "Priority"],
+                    "Sentence": "The scientist highlighted the significance of the new discovery in improving medicine."
+                },
+                "High": {
+                    "Meaning": "refers to the deeper meaning, value, or impact of something, highlighting its importance.",
+                    "Synonyms": ["Importance", "Worth", "Value", "Priority"],
+                    "Sentence": "The historian emphasized the significance of the event, showing how it shaped the country’s future."
+                }
+            }
+        },
+        {
+            "Word": "Validity",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means whether something is true or correct.",
+                    "Synonyms": ["Truth", "Rightness", "Fact", "Correctness"],
+                    "Sentence": "The teacher checked the validity of the answer to make sure it was correct."
+                },
+                "Middle": {
+                    "Meaning": "is about how accurate, reliable, or true something is, especially in studies or arguments.",
+                    "Synonyms": ["Accuracy", "Rightness", "Correctness", "Fact"],
+                    "Sentence": "The scientist tested the validity of the experiment by repeating it several times."
+                },
+                "High": {
+                    "Meaning": "means how well something is supported by evidence and logic, showing it is accurate and trustworthy.",
+                    "Synonyms": ["Accuracy", "Rightness", "Correctness", "Fact"],
+                    "Sentence": "The researcher questioned the validity of the study’s findings, as the data lacked sufficient evidence to support the conclusions."
+                }
+            }
+        },
+        {
+            "Word": "Reliability",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means how much you can trust something to work the same way every time.",
+                    "Synonyms": ["Trust", "Dependability", "Stability", "Accuracy"],
+                    "Sentence": "The clock’s reliability means it always shows the correct time."
+                },
+                "Middle": {
+                    "Meaning": "is the ability of something to give consistent and dependable results, whether it’s a machine, person, or study.",
+                    "Synonyms": ["Trust", "Dependability", "Stability", "Accuracy"],
+                    "Sentence": "The teacher tested the reliability of the new app to make sure it worked well every day."
+                },
+                "High": {
+                    "Meaning": "refers to the consistency and dependability of a system, process, or result, ensuring it performs as expected under repeated conditions or over time.",
+                    "Synonyms": ["Trust", "Dependability", "Stability", "Accuracy"],
+                    "Sentence": "The reliability of the research findings was confirmed through repeated experiments and consistent results."
+                }
+            }
+        },
+        {
+            "Word": "Correlation",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means a connection between two things, where if one changes, the other might change too.",
+                    "Synonyms": ["Link", "Connection", "Relation", "Association"],
+                    "Sentence": "There is a correlation between studying and getting better grades; when you study more, your grades improve."
+                },
+                "Middle": {
+                    "Meaning": "is a relationship between two things where changes in one are linked to changes in the other.",
+                    "Synonyms": ["Link", "Connection", "Relation", "Association"],
+                    "Sentence": "The scientist noticed a correlation between exercise and feeling happier."
+                },
+                "High": {
+                    "Meaning": "refers to a statistical measure that describes the extent to which two variables are related, indicating patterns or associations.",
+                    "Synonyms": ["Link", "Connection", "Relation", "Association"],
+                    "Sentence": "The research found a strong correlation between air pollution and respiratory diseases."
+                }
+            }
+        },
+        {
+            "Word": "Causation",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means when one thing happens because another thing caused it.",
+                    "Synonyms": ["Cause", "Reason", "Effect", "Result"],
+                    "Sentence": "Eating too much candy can cause a stomachache; this is causation."
+                },
+                "Middle": {
+                    "Meaning": "is the relationship where one event directly makes another event happen.",
+                    "Synonyms": ["Connection", "Impact", "Influence", "Reason"],
+                    "Sentence": "The experiment showed clear causation: turning on the heater made the room warmer."
+                },
+                "High": {
+                    "Meaning": "means a direct cause-and-effect relationship, where one thing happens because another thing made it happen.",
+                    "Synonyms": ["Connection", "Impact", "Influence", "Reason"],
+                    "Sentence": "The study demonstrated causation, proving that smoking directly increases the risk of lung diseases."
+                }
+            }
+        },
+        {
+            "Word": "Framework",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means a basic structure or plan that helps you build or organize something.",
+                    "Synonyms": ["Plan", "Guide", "Structure", "Outline"],
+                    "Sentence": "The teacher gave us a framework to help plan our story step by step."
+                },
+                "Middle": {
+                    "Meaning": "is a set of ideas, rules, or a structure used to organize and support something, like a project or system.",
+                    "Synonyms": ["Model", "System", "Guide", "Structure"],
+                    "Sentence": "The company used a framework of rules and goals to guide their new project."
+                },
+                "High": {
+                    "Meaning": "refers to a structured foundation of concepts, principles, or components that provides guidance and organization for building, analyzing.",
+                    "Synonyms": ["Architecture", "System", "Guide", "Structure"],
+                    "Sentence": "The research paper introduced a theoretical framework to analyze the relationship between technology and social behavior."
+                }
+            }
+        },
+        {
+            "Word": "Variable",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means something that can change or be different.",
+                    "Synonyms": ["Changer", "Factor", "Feature", "Something switch"],
+                    "Sentence": "The weather is variable because it can change every day."
+                },
+                "Middle": {
+                    "Meaning": "is a factor or part of something that can change and affect the result of a study, experiment, or process.",
+                    "Synonyms": ["Changer", "Factor", "Feature", "Something switch"],
+                    "Sentence": "In the experiment, the scientist changed one variable to see how it affected plant growth."
+                },
+                "High": {
+                    "Meaning": "is something in a study or experiment that can change and affect the results.",
+                    "Synonyms": ["Changer", "Factor", "Feature", "Something switch"],
+                    "Sentence": "The study identified age as a key variable influencing the effectiveness of the treatment."
+                }
+            }
+        },
+        {
+            "Word": "Context",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means the situation or things around something that help you understand it.",
+                    "Synonyms": ["Situation", "Background", "Scenario", "Perspective"],
+                    "Sentence": "The word 'bank' can mean money or a river side, depending on the context of the sentence."
+                },
+                "Middle": {
+                    "Meaning": "is the background, details, or situation that explain why something happens or what it means.",
+                    "Synonyms": ["Situation", "Background", "Scenario", "Perspective"],
+                    "Sentence": "The context of the story, like the time and place, helps us understand why the characters act the way they do."
+                },
+                "High": {
+                    "Meaning": "refers to the surrounding circumstances, conditions, or background information that provide meaning and clarity to an event, idea, or statement.",
+                    "Synonyms": ["Situation", "Background", "Scenario", "Perspective"],
+                    "Sentence": "Understanding the historical context of the speech reveals why its message was so impactful during that era."
+                }
+            }
+        },
+        {
+            "Word": "Assumption",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means thinking something is true without checking if it is.",
+                    "Synonyms": ["Guess", "Belief", "Thought", "Idea"],
+                    "Sentence": "He made an assumption that it wouldn’t rain, so he didn’t take an umbrella."
+                },
+                "Middle": {
+                    "Meaning": "is believing something is true or will happen, even if there’s no proof yet.",
+                    "Synonyms": ["Expectation", "Presumption", "Guess", "Inference"],
+                    "Sentence": "The scientist started with the assumption that the chemical would react and then tested it."
+                },
+                "High": {
+                    "Meaning": "refers to an idea or belief accepted as true without evidence.",
+                    "Synonyms": ["Expectation", "Presumption", "Guess", "Inference"],
+                    "Sentence": "The argument was built on the assumption that economic growth leads to better living conditions, but this was later questioned."
+                }
+            }
+        },
+        {
+            "Word": "Critical Thinking",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means thinking carefully to decide what is true or what is best.",
+                    "Synonyms": ["Thinking", "Judging", "Figuring out", "Checking"],
+                    "Sentence": "She used critical thinking to choose the best toy by comparing all the options."
+                },
+                "Middle": {
+                    "Meaning": "is the ability to analyze information, ask questions, and make decisions based on logic and facts.",
+                    "Synonyms": ["Analysis", "Thinking", "Problem-solving", "Reasoning"],
+                    "Sentence": "The student applied critical thinking to decide if the information in the article was accurate and useful."
+                },
+                "High": {
+                    "Meaning": "is the skill of analyzing and evaluating information or ideas carefully and logically to make good decisions or solve problems.",
+                    "Synonyms": ["Logical Reasoning", "Rational Analysis", "Evaluation", "Judging"],
+                    "Sentence": "The researcher relied on critical thinking to assess conflicting data and develop a well-supported conclusion."
+                }
+            }
+        },
+        {
+            "Word": "Abstract",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means an idea or thought that you can’t touch or see.",
+                    "Synonyms": ["Idea", "Concept", "Thought", "Not physical"],
+                    "Sentence": "Love is an abstract idea because you can feel it, but you can’t see or touch it."
+                },
+                "Middle": {
+                    "Meaning": "refers to something that is not physical or concrete, like an idea, feeling, or concept.",
+                    "Synonyms": ["Not physical", "Theoretical", "Imaginative", "Intangible"],
+                    "Sentence": "The painting was abstract, showing feelings through shapes and colors instead of real objects."
+                },
+                "High": {
+                    "Meaning": "describes concepts, ideas, or qualities that exist in thought but lack a physical or tangible form.",
+                    "Synonyms": ["Not physical", "Theoretical", "Imaginative", "Intangible"],
+                    "Sentence": "Philosophers often discuss abstract ideas like justice and morality, which require careful thought to understand."
+                }
+            }
+        },
+        {
+            "Word": "Literature Review",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means reading and learning from what others wrote about a topic.",
+                    "Synonyms": ["Summary", "Overview", "Survey", "Research notes"],
+                    "Sentence": "The teacher asked us to do a literature review to see what others said about the topic."
+                },
+                "Middle": {
+                    "Meaning": "is a summary of studies and writings about a topic to understand what is already known and find gaps for more research.",
+                    "Synonyms": ["Survey", "Analysis", "Summary", "Overview"],
+                    "Sentence": "The researcher wrote a literature review to summarize studies on climate change and find areas needing more research."
+                },
+                "High": {
+                    "Meaning": "refers to a comprehensive analysis and synthesis of existing research and scholarly writings on a specific topic.",
+                    "Synonyms": ["Survey", "Analysis", "Summary", "Overview"],
+                    "Sentence": "The literature review highlighted significant trends and research gaps, forming the foundation for the new study’s methodology."
+                }
+            }
+        },
+        {
+            "Word": "Data",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means information, like numbers or facts, that you can use to learn something.",
+                    "Synonyms": ["Information", "Stored facts", "Details", "Evidence"],
+                    "Sentence": "The teacher used data to show how many students liked the new game."
+                },
+                "Middle": {
+                    "Meaning": "is information collected from studies, experiments, or observations, used to understand or solve problems.",
+                    "Synonyms": ["Information", "Stored facts", "Details", "Evidence"],
+                    "Sentence": "The scientist collected data from the experiment to understand how plants grow in different conditions."
+                },
+                "High": {
+                    "Meaning": "is information collected through research, experiments, or observations, used to analyze and understand patterns or make decisions.",
+                    "Synonyms": ["Information", "Stored facts", "Details", "Evidence"],
+                    "Sentence": "The researcher analyzed the data to identify trends in climate change over the past decade."
+                }
+            }
+        },
+        {
+            "Word": "Findings",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means what you learn or discover after looking at information or doing an experiment.",
+                    "Synonyms": ["Results", "Answers", "Facts", "Discoveries"],
+                    "Sentence": "The teacher shared the findings of the class survey, showing most students liked reading."
+                },
+                "Middle": {
+                    "Meaning": "are the results or conclusions you get after studying something, doing research, or running tests.",
+                    "Synonyms": ["Evidence", "Conclusions", "Results", "Answers"],
+                    "Sentence": "The scientist explained her findings, showing how sunlight affects plant growth."
+                },
+                "High": {
+                    "Meaning": "refer to the outcomes, results, or conclusions derived from systematic research, analysis, or experimentation, providing insights into the studied subject.",
+                    "Synonyms": ["Insights", "Observations", "Evidence", "Results"],
+                    "Sentence": "The researcher’s findings revealed a strong correlation between exercise and improved mental health, adding depth to the study."
+                }
+            }
+        },
+        {
+            "Word": "Conclusion",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means the final idea or decision you make after thinking about something.",
+                    "Synonyms": ["Ending answers", "Result", "Decision", "Judgment"],
+                    "Sentence": "At the end of the story, the teacher asked us to share the conclusion about what happened."
+                },
+                "Middle": {
+                    "Meaning": "is the final result or judgment you reach after studying information or evidence.",
+                    "Synonyms": ["Ending answers", "Result", "Decision", "Judgment"],
+                    "Sentence": "The scientist reached a conclusion after analyzing the data, showing that more sunlight helps plants grow faster."
+                },
+                "High": {
+                    "Meaning": "refers to a reasoned decision, judgment, or summary drawn from analyzing data, evidence, often forming the final part of a study.",
+                    "Synonyms": ["Ending answers", "Result", "Decision", "Judgment"],
+                    "Sentence": "The research paper’s conclusion summarized the key findings and explained their significance for future studies."
+                }
+            }
+        },
+        {
+            "Word": "Bias",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means liking one thing more than another in a way that’s not fair.",
+                    "Synonyms": ["Unfairness", "Preference", "Slant", "Unjustness"],
+                    "Sentence": "The teacher reminded the students not to show bias by choosing their friends for the team."
+                },
+                "Middle": {
+                    "Meaning": "is an unfair preference or judgment that affects how someone thinks about people, ideas, or situations.",
+                    "Synonyms": ["Unfairness", "Preference", "Slant", "Unjustness"],
+                    "Sentence": "The judge worked hard to avoid bias and treated both sides of the case equally."
+                },
+                "High": {
+                    "Meaning": "is an unfair tendency or preference that affects decisions or judgments, often leading to favoritism or unfair outcomes.",
+                    "Synonyms": ["Unfairness", "Preference", "Slant", "Unjustness"],
+                    "Sentence": "The study’s results were questioned because bias in the sampling process influenced the findings unfairly."
+                }
+            }
+        },
+        {
+            "Word": "Innovation",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means creating something new or finding a better way to do something.",
+                    "Synonyms": ["New idea", "Change", "Improvement", "Invention"],
+                    "Sentence": "The new toy is an innovation because it helps kids learn while playing."
+                },
+                "Middle": {
+                    "Meaning": "is the process of developing new ideas, products, or methods that improve how things work.",
+                    "Synonyms": ["New idea", "Change", "Improvement", "Invention"],
+                    "Sentence": "The company’s innovation in designing eco-friendly packaging reduced waste and helped the environment."
+                },
+                "High": {
+                    "Meaning": "means bringing new and creative ideas, methods, or technologies that make things better or solve problems in a unique way.",
+                    "Synonyms": ["New idea", "Change", "Improvement", "Invention"],
+                    "Sentence": "The scientist’s innovation in renewable energy technology opened new possibilities for sustainable power generation."
+                }
+            }
+        },
+        {
+            "Word": "Ethnography",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means studying how people live, their culture, and what they do every day.",
+                    "Synonyms": ["Study of people", "Culture study", "Community study", "Social research"],
+                    "Sentence": "The teacher showed us pictures of houses from different places to explain ethnography."
+                },
+                "Middle": {
+                    "Meaning": "is the study of people and their cultures, focusing on their daily lives, traditions, and behaviors by observing and interacting with them.",
+                    "Synonyms": ["Study of people", "Culture study", "Community study", "Social research"],
+                    "Sentence": "The researcher used ethnography to learn about the daily lives of farmers by living in their village."
+                },
+                "High": {
+                    "Meaning": "is the study of people and their cultures, focusing on their daily lives, traditions, and behaviors by observing and interacting with them.",
+                    "Synonyms": ["Study of people", "Culture study", "Community study", "Social research"],
+                    "Sentence": "Through ethnography, the anthropologist documented the community’s rituals and traditions to understand their cultural values."
+                }
+            }
+        },
+        {
+            "Word": "Dissertation",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means a long paper or project that students write to finish their studies.",
+                    "Synonyms": ["Project", "Paper", "Report", "Essay"],
+                    "Sentence": "She worked hard on her dissertation to finish her studies."
+                },
+                "Middle": {
+                    "Meaning": "is a detailed research paper that students write at the end of their degree, showing what they learned and discovered about a topic.",
+                    "Synonyms": ["Research paper", "Final project", "Report", "Essay"],
+                    "Sentence": "His dissertation focused on how technology is changing education, based on years of research."
+                },
+                "High": {
+                    "Meaning": "is a comprehensive research study that students complete as a requirement for an advanced degree, providing original insights and demonstrating expertise in their chosen field.",
+                    "Synonyms": ["Academic study", "Final project", "Report", "Essay"],
+                    "Sentence": "The student defended her dissertation, which introduced new methods for analyzing climate change data, to earn her PhD."
+                }
+            }
+        },
+        {
+            "Word": "Plagiarism",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means copying someone else’s work and saying it’s your own.",
+                    "Synonyms": ["Copying", "Cheating", "Stealing", "Imitating"],
+                    "Sentence": "Copying your friend’s homework without asking is plagiarism."
+                },
+                "Middle": {
+                    "Meaning": "is using someone else’s words, ideas, or work without giving them credit and pretending it’s yours.",
+                    "Synonyms": ["Forgery", "Unoriginality", "Stealing", "Dishonesty"],
+                    "Sentence": "The teacher explained that using information from a book without giving credit is plagiarism."
+                },
+                "High": {
+                    "Meaning": "means taking someone else’s ideas, words, or work and using them as your own without giving proper credit, which is dishonest and unethical.",
+                    "Synonyms": ["Forgery", "Unoriginality", "Stealing", "Dishonesty"],
+                    "Sentence": "The professor warned that plagiarism could result in serious academic consequences."
+                }
+            }
+        }
+    ],
+    "GeneralWords": [
+        {
+            "Word": "Allegory",
+            "Levels": {
+                "Low": {
+                    "Meaning": "is a story that uses simple characters and events to show a hidden meaning or lesson.",
+                    "Synonyms": ["Lesson", "Message", "Example", "Story"],
+                    "Sentence": "The story about animals working together was an allegory for teamwork and kindness."
+                },
+                "Middle": {
+                    "Meaning": "is a type of story where the characters, events, and places represent deeper meanings, often about morals or important ideas.",
+                    "Synonyms": ["Parable", "Lesson", "Message", "Example"],
+                    "Sentence": "The book used an allegory to show how greed can destroy friendships."
+                },
+                "High": {
+                    "Meaning": "is a story where people, places, and events represent ideas or messages about life, morals, offering deeper meanings behind the surface.",
+                    "Synonyms": ["Parable", "Lesson", "Message", "Example"],
+                    "Sentence": "The novel is an allegory of societal struggles, with each character symbolizing a different aspect of human nature."
+                }
+            }
+        },
+        {
+            "Word": "Ethereal",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means very light and beautiful, like it’s from a dream or not from this world.",
+                    "Synonyms": ["Beautiful", "Dreamy", "Unreal", "Soft"],
+                    "Sentence": "The clouds looked so ethereal, like soft cotton in the sky."
+                },
+                "Middle": {
+                    "Meaning": "describes something delicate, elegant, and so beautiful that it feels almost unreal or from another world.",
+                    "Synonyms": ["Beautiful", "Dreamy", "Unreal", "Soft"],
+                    "Sentence": "Her voice was so ethereal that it felt like listening to a dream."
+                },
+                "High": {
+                    "Meaning": "refers to something exquisitely delicate, light, or otherworldly in appearance or nature, evoking a sense of heavenly beauty.",
+                    "Synonyms": ["Beautiful", "Dreamy", "Unreal", "Soft"],
+                    "Sentence": "The landscape had an ethereal beauty, with its misty hills and soft, glowing light, as if it belonged to another world."
+                }
+            }
+        },
+        {
+            "Word": "Pernicious",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means something very harmful or bad, even if it’s not easy to see at first.",
+                    "Synonyms": ["Harmful", "Bad", "Dangerous", "Unkind"],
+                    "Sentence": "Eating too much candy every day can have a pernicious effect on your teeth."
+                },
+                "Middle": {
+                    "Meaning": "describes something that causes serious harm or damage over time, often in a hidden way.",
+                    "Synonyms": ["Damaging", "Evil", "Unhealthy", "Dangerous"],
+                    "Sentence": "The spread of false information online can be pernicious, leading to confusion and harm over time."
+                },
+                "High": {
+                    "Meaning": "refers to something that is dangerously harmful or destructive, often in a subtle or gradual manner, with long-lasting negative effects.",
+                    "Synonyms": ["Damaging", "Evil", "Unhealthy", "Dangerous"],
+                    "Sentence": "The pernicious effects of pollution slowly destroy ecosystems and harm human health over time."
+                }
+            }
+        },
+        {
+            "Word": "Reverberation",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means the sound or effect that stays and repeats after something happens.",
+                    "Synonyms": ["Echo", "Effect", "Repeat", "Bounce"],
+                    "Sentence": "The loud clap caused a reverberation that echoed in the room."
+                },
+                "Middle": {
+                    "Meaning": "is the lasting sound or impact of something, like an echo or a reaction that continues for some time.",
+                    "Synonyms": ["Impact", "Resonance", "Effect", "Repeat"],
+                    "Sentence": "The speech had a powerful reverberation, leaving everyone thinking about its message for days."
+                },
+                "High": {
+                    "Meaning": "refers to the prolonged effects or echoes of an event, sound, or action, often carrying a significant impact or influence over time.",
+                    "Synonyms": ["Impact", "Resonance", "Effect", "Repeat"],
+                    "Sentence": "The scientist’s groundbreaking discovery caused reverberations in the global scientific community, influencing research for years."
+                }
+            }
+        },
+        {
+            "Word": "Paradox",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means something that seems wrong or impossible but might be true.",
+                    "Synonyms": ["Mystery", "Opposite", "Conflict", "Inconsistency"],
+                    "Sentence": "It’s a paradox that drinking too much water can sometimes be harmful."
+                },
+                "Middle": {
+                    "Meaning": "is a statement or situation that seems to contradict itself but can actually make sense or reveal a truth.",
+                    "Synonyms": ["Mystery", "Opposite", "Conflict", "Inconsistency"],
+                    "Sentence": "The phrase “less is more” is a paradox because it suggests doing less can actually achieve more."
+                },
+                "High": {
+                    "Meaning": "refers to a seemingly contradictory or absurd statement, idea, or situation that, upon deeper analysis, reveals an unexpected or hidden truth.",
+                    "Synonyms": ["Mystery", "Opposite", "Conflict", "Inconsistency"],
+                    "Sentence": "The paradox of technology is that it connects people globally but can also make them feel isolated."
+                }
+            }
+        },
+        {
+            "Word": "Eloquence",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means speaking or writing in a way that is very clear and beautiful.",
+                    "Synonyms": ["Clear speech", "Nice words", "Good talking", "Beautiful writing"],
+                    "Sentence": "The teacher’s eloquence made the story easy to understand and enjoy."
+                },
+                "Middle": {
+                    "Meaning": "is the ability to speak or write in a way that is persuasive, clear, and full of meaning.",
+                    "Synonyms": ["Expression", "Fluency", "Persuasion", "Clear speech"],
+                    "Sentence": "The speaker’s eloquence inspired the audience to think differently about the environment."
+                },
+                "High": {
+                    "Meaning": "refers to the art of expressing ideas fluently, persuasively, and with clarity, often moving or inspiring others.",
+                    "Synonyms": ["Expression", "Fluency", "Persuasion", "Clear speech"],
+                    "Sentence": "Her eloquence during the debate captivated the audience, combining logic with emotional appeal to convey her message powerfully."
+                }
+            }
+        },
+        {
+            "Word": "Propensity",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means a natural way of acting or liking something.",
+                    "Synonyms": ["Habit", "Tendency", "Preference", "Way"],
+                    "Sentence": "She has a propensity to choose sweets over vegetables."
+                },
+                "Middle": {
+                    "Meaning": "is a strong tendency or habit to behave in a certain way or like something.",
+                    "Synonyms": ["Lean", "Behavior", "Habit", "Preference"],
+                    "Sentence": "His propensity for helping others made him a favorite among his friends."
+                },
+                "High": {
+                    "Meaning": "refers to an inherent inclination or predisposition to act, think, or feel in a particular manner, often influenced by personality or experience.",
+                    "Synonyms": ["Lean", "Behavior", "Habit", "Preference"],
+                    "Sentence": "People have a propensity to avoid change when they feel unsure."
+                }
+            }
+        },
+        {
+            "Word": "Subjugation",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means controlling someone and not letting them do what they want.",
+                    "Synonyms": ["Control", "Rule", "Power", "Force"],
+                    "Sentence": "The king’s army used subjugation to make the people follow his rules."
+                },
+                "Middle": {
+                    "Meaning": "is when one person or group takes control over another, making them follow their rules.",
+                    "Synonyms": ["Command", "Control", "Power", "Force"],
+                    "Sentence": "History shows many examples of subjugation, where powerful nations controlled weaker ones."
+                },
+                "High": {
+                    "Meaning": "means taking control over someone or a group and limiting their freedom.",
+                    "Synonyms": ["Command", "Control", "Power", "Force"],
+                    "Sentence": "The story highlights the pain caused by subjugation when one group takes away another’s freedom."
+                }
+            }
+        },
+        {
+            "Word": "Luminescence",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means something that glows or shines in the dark.",
+                    "Synonyms": ["Glow", "Shine", "Light", "Sparkle"],
+                    "Sentence": "The stars on the ceiling had luminescence and glowed in the dark."
+                },
+                "Middle": {
+                    "Meaning": "is the light that comes from something without heat, like a glow-in-the-dark sticker.",
+                    "Synonyms": ["Brightness", "Glitter", "Gleam", "Shine"],
+                    "Sentence": "The jellyfish’s luminescence lit up the ocean, creating a magical glow."
+                },
+                "High": {
+                    "Meaning": "means light given off by something without heat, often from chemical or biological processes.",
+                    "Synonyms": ["Brightness", "Glitter", "Gleam", "Shine"],
+                    "Sentence": "The scientist studied the luminescence of certain minerals, which glowed brightly under ultraviolet light."
+                }
+            }
+        },
+        {
+            "Word": "Obfuscation",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means making something hard to understand on purpose.",
+                    "Synonyms": ["Confusion", "Hiding", "Trick", "Mix-up"],
+                    "Sentence": "The instructions were full of obfuscation, so no one could understand them."
+                },
+                "Middle": {
+                    "Meaning": "is when someone makes something confusing or unclear, often to hide the truth or make it harder to figure out.",
+                    "Synonyms": ["Complication", "Misleading", "Ambiguity", "Confusion"],
+                    "Sentence": "The politician used obfuscation to avoid answering the question directly."
+                },
+                "High": {
+                    "Meaning": "means making information unclear or confusing on purpose to hide the truth or mislead others.",
+                    "Synonyms": ["Complication", "Misleading", "Ambiguity", "Confusion"],
+                    "Sentence": "The lawyer’s use of obfuscation made the case harder to understand, hiding important facts."
+                }
+            }
+        },
+        {
+            "Word": "Transcendence",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means going beyond normal limits or being very special.",
+                    "Synonyms": ["Greatness", "Beyond", "Excellence", "Superiority"],
+                    "Sentence": "The hero’s bravery showed his transcendence over fear."
+                },
+                "Middle": {
+                    "Meaning": "is the state of going beyond ordinary experiences or limits, reaching something higher or greater.",
+                    "Synonyms": ["Greatness", "Beyond", "Excellence", "Superiority"],
+                    "Sentence": "Her art represents transcendence, moving beyond the ordinary to create something truly inspiring."
+                },
+                "High": {
+                    "Meaning": "refers to the quality of surpassing boundaries, limitations, often relating to intellectual, or extraordinary achievements that elevate one to a higher state of being or understanding.",
+                    "Synonyms": ["Greatness", "Beyond", "Excellence", "Superiority"],
+                    "Sentence": "The philosopher’s ideas reflected a sense of transcendence, exploring truths beyond human understanding and ordinary experience."
+                }
+            }
+        },
+        {
+            "Word": "Resplendence",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means something very shiny and beautiful.",
+                    "Synonyms": ["Shine", "Glow", "Sparkle", "Beauty"],
+                    "Sentence": "The sun’s resplendence made the sky look golden."
+                },
+                "Middle": {
+                    "Meaning": "is the quality of being bright, glowing, and very impressive in appearance.",
+                    "Synonyms": ["Brightness", "Elegance", "Sparkle", "Beauty"],
+                    "Sentence": "The queen’s dress shone with resplendence, making her the center of attention at the ball."
+                },
+                "High": {
+                    "Meaning": "refers to a dazzling brilliance or radiance, marked by an impressive and striking beauty that captivates attention.",
+                    "Synonyms": ["Brightness", "Elegance", "Sparkle", "Beauty"],
+                    "Sentence": "The resplendence of the mountain at sunrise filled the landscape with vibrant and breathtaking colors."
+                }
+            }
+        },
+        {
+            "Word": "Conflagration",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means a very big and dangerous fire.",
+                    "Synonyms": ["Fire", "Blaze", "Flame", "Burning"],
+                    "Sentence": "The forest was destroyed by a big conflagration that burned for days."
+                },
+                "Middle": {
+                    "Meaning": "is a large and destructive fire that causes damage to buildings or land.",
+                    "Synonyms": ["Fire", "Blaze", "Destruction", "Disaster"],
+                    "Sentence": "The conflagration spread quickly, destroying homes and forcing people to leave the area."
+                },
+                "High": {
+                    "Meaning": "refers to an extensive and intense fire that spreads rapidly, causing widespread destruction, often used metaphorically for large-scale conflicts.",
+                    "Synonyms": ["Fire", "Blaze", "Destruction", "Disaster"],
+                    "Sentence": "The conflagration not only destroyed the city but also left a lasting impact on its people’s lives and history."
+                }
+            }
+        },
+        {
+            "Word": "Vicissitude",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means a big change, usually not a good one.",
+                    "Synonyms": ["Change", "Trouble", "Ups and downs", "Shift"],
+                    "Sentence": "Losing his toy was a vicissitude that made him sad for the day."
+                },
+                "Middle": {
+                    "Meaning": "is a sudden or unexpected change in life, often bringing challenges or difficulties.",
+                    "Synonyms": ["Shift", "Difficulty", "Challenge", "Ups and downs"],
+                    "Sentence": "The family faced many vicissitudes, like moving to a new city and starting over."
+                },
+                "High": {
+                    "Meaning": "refers to a shift or variation in circumstances, often representing the unpredictable ups and downs of life or fortune.",
+                    "Synonyms": ["Instability", "Shift", "Difficulty", "Challenge"],
+                    "Sentence": "The novel explores the vicissitudes of the protagonist’s life, highlighting the unpredictable nature of success and failure."
+                }
+            }
+        },
+        {
+            "Word": "Ephemeral",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means a big change, usually not a good one.",
+                    "Synonyms": ["Short", "Quick", "Brief", "Fleeting"],
+                    "Sentence": "The rainbow was ephemeral, disappearing after just a few minutes."
+                },
+                "Middle": {
+                    "Meaning": "is a sudden or unexpected change in life, often bringing challenges or difficulties.",
+                    "Synonyms": ["Momentary", "Temporary", "Passing", "Vanishing"],
+                    "Sentence": "Their happiness during the holiday was ephemeral, fading as soon as they returned home."
+                },
+                "High": {
+                    "Meaning": "refers to a shift or variation in circumstances, often representing the unpredictable ups and downs of life or fortune.",
+                    "Synonyms": ["Momentary", "Temporary", "Passing", "Vanishing"],
+                    "Sentence": "The artist captured the ephemeral nature of life through paintings that depicted moments of fleeting beauty."
+                }
+            }
+        },
+        {
+            "Word": "Dichotomy",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means a big difference between two opposite things.",
+                    "Synonyms": ["Difference", "Opposites", "Split", "Contrast"],
+                    "Sentence": "There is a dichotomy between night and day because they are completely different."
+                },
+                "Middle": {
+                    "Meaning": "is when something is divided into two completely different or opposite parts.",
+                    "Synonyms": ["Separation", "Difference", "Opposites", "Split"],
+                    "Sentence": "The movie showed a dichotomy between the hero’s kindness and the villain’s cruelty."
+                },
+                "High": {
+                    "Meaning": "refers to the division of a concept, idea into two contrasting or entirely opposite parts, often highlighting a conflict or balance between them.",
+                    "Synonyms": ["Separation", "Difference", "Opposites", "Split"],
+                    "Sentence": "The author explores the dichotomy between tradition and modernity, highlighting the tension in a rapidly changing society."
+                }
+            }
+        },
+        {
+            "Word": "Ineffable",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means something so amazing or special that you can’t explain it in words.",
+                    "Synonyms": ["Amazing", "Unbelievable", "Indescribable", "Wonderful"],
+                    "Sentence": "The view of the sunset was so beautiful it felt ineffable."
+                },
+                "Middle": {
+                    "Meaning": "is something so powerful, beautiful, or emotional that it’s hard to describe in words.",
+                    "Synonyms": ["Indescribable", "Unspeakable", "Unexplainable", "Unimaginable"],
+                    "Sentence": "Her joy on graduation day was ineffable, a feeling too deep to describe."
+                },
+                "High": {
+                    "Meaning": "refers to a quality or experience so extraordinary or profound that it defies expression or description through language.",
+                    "Synonyms": ["Indescribable", "Unspeakable", "Unexplainable", "Unimaginable"],
+                    "Sentence": "The artist’s work captured the ineffable beauty of nature, leaving viewers speechless."
+                }
+            }
+        },
+        {
+            "Word": "Juxtaposition",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means putting two very different things next to each other to see how they are different.",
+                    "Synonyms": ["Comparison", "Contrast", "Side-by-side", "Opposites"],
+                    "Sentence": "The artist used juxtaposition by painting a sunny sky next to a stormy one."
+                },
+                "Middle": {
+                    "Meaning": "is placing two opposite or contrasting things side by side to show their differences or make something stand out.",
+                    "Synonyms": ["Comparison", "Contrast", "Side-by-side", "Opposites"],
+                    "Sentence": "The movie used juxtaposition to show the difference between the hero’s kindness and the villain’s cruelty."
+                },
+                "High": {
+                    "Meaning": "is the act of placing contrasting elements together to highlight their differences.",
+                    "Synonyms": ["Comparison", "Contrast", "Side-by-side", "Opposites"],
+                    "Sentence": "The writer’s use of juxtaposition between wealth and poverty emphasized the stark inequalities in society."
+                }
+            }
+        },
+        {
+            "Word": "Omnipotent",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means being able to do anything.",
+                    "Synonyms": ["All-powerful", "Strong", "Unlimited", "Mighty"],
+                    "Sentence": "In the story, the wizard was omnipotent and could cast any spell he wanted."
+                },
+                "Middle": {
+                    "Meaning": "is having unlimited power or the ability to do everything.",
+                    "Synonyms": ["Invincible", "Unstoppable", "All-powerful", "Strong"],
+                    "Sentence": "People believed the king was omnipotent, able to make any decision without question."
+                },
+                "High": {
+                    "Meaning": "refers to possessing unlimited and absolute power or authority.",
+                    "Synonyms": ["Invincible", "Unstoppable", "All-powerful", "Strong"],
+                    "Sentence": "The debate centered on whether an omnipotent being could coexist with human free will."
+                }
+            }
+        },
+        {
+            "Word": "Proliferation",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means when something grows or spreads very quickly.",
+                    "Synonyms": ["Growth", "Spread", "Increase", "Expansion"],
+                    "Sentence": "The proliferation of flowers in spring made the garden very colorful."
+                },
+                "Middle": {
+                    "Meaning": "is the fast increase or spread of something, like ideas, plants, or technologies.",
+                    "Synonyms": ["Boom", "Distribution", "Growth", "Spread"],
+                    "Sentence": "The proliferation of mobile phones has changed how people communicate around the world."
+                },
+                "High": {
+                    "Meaning": "refers to the rapid and often excessive growth, multiplication, or spread of something across a specific area or system.",
+                    "Synonyms": ["Boom", "Distribution", "Growth", "Spread"],
+                    "Sentence": "The rapid proliferation of misinformation online has created new challenges for educators and policymakers."
+                }
+            }
+        },
+        {
+            "Word": "Reclamation",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means fixing or taking back something that was broken or lost.",
+                    "Synonyms": ["Fixing", "Taking back", "Cleaning", "Repairing"],
+                    "Sentence": "The farmer worked on the reclamation of the old field to grow crops again."
+                },
+                "Middle": {
+                    "Meaning": "is the process of restoring something to a better state or taking it back for use, like materials.",
+                    "Synonyms": ["Fixing", "Taking back", "Cleaning", "Repairing"],
+                    "Sentence": "The city started a reclamation project to clean and reuse the polluted river."
+                },
+                "High": {
+                    "Meaning": "is the act of restoring or repurposing something to make it useful again after it has been damaged or abandoned.",
+                    "Synonyms": ["Fixing", "Taking back", "Cleaning", "Repairing"],
+                    "Sentence": "The government invested in the reclamation of desert land, transforming it into fertile farmland for sustainable agriculture."
+                }
+            }
+        },
+        {
+            "Word": "Ostentation",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means showing off to make people notice you.",
+                    "Synonyms": ["Flashiness", "Bragging", "Showing off", "Flashiness"],
+                    "Sentence": "His shiny new car was an example of ostentation, showing off to everyone in the neighborhood."
+                },
+                "Middle": {
+                    "Meaning": "is when someone shows their wealth or success in a way that’s meant to impress others.",
+                    "Synonyms": ["Flashiness", "Bragging", "Showing off", "Flashiness"],
+                    "Sentence": "The celebrity’s house, filled with gold decorations, was built with ostentation to impress visitors."
+                },
+                "High": {
+                    "Meaning": "refers to an excessive or showy display of wealth, luxury, or success, often intended to attract attention or admiration from others.",
+                    "Synonyms": ["Flashiness", "Bragging", "Showing off", "Flashiness"],
+                    "Sentence": "The party was criticized for its ostentation, with lavish decorations and expensive food meant solely to display wealth and status."
+                }
+            }
+        },
+        {
+            "Word": "Aberration",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means something that is not normal or expected.",
+                    "Synonyms": ["Mistake", "Change", "Difference", "Weirdness"],
+                    "Sentence": "The warm day in winter was an aberration because it’s usually cold."
+                },
+                "Middle": {
+                    "Meaning": "is a change or difference from what is usual, normal, or expected, often in a way that is strange or wrong.",
+                    "Synonyms": ["Mistake", "Change", "Difference", "Weirdness"],
+                    "Sentence": "His angry outburst was an aberration, as he is usually very calm."
+                },
+                "High": {
+                    "Meaning": "means a deviation from what is normal or expected, often seen as unusual or unwelcome.",
+                    "Synonyms": ["Mistake", "Change", "Difference", "Weirdness"],
+                    "Sentence": "The scientist noted the unexpected data as an aberration, potentially indicating an error in the experiment."
+                }
+            }
+        },
+        {
+            "Word": "Inexorable",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means something that cannot be stopped or changed.",
+                    "Synonyms": ["Unstoppable", "Unchanging", "Constant", "Strong"],
+                    "Sentence": "The rain was inexorable, falling all day without stopping."
+                },
+                "Middle": {
+                    "Meaning": "is something that keeps happening or moving forward, no matter what you do to stop it.",
+                    "Synonyms": ["Unstoppable", "Unchanging", "Constant", "Strong"],
+                    "Sentence": "Time is inexorable, moving forward no matter what we do."
+                },
+                "High": {
+                    "Meaning": "refers to a process, force, or event that is relentless and impossible to halt or prevent, often implying inevitability and unyielding nature.",
+                    "Synonyms": ["Unstoppable", "Unchanging", "Constant", "Strong"],
+                    "Sentence": "The inexorable rise of technology continues to reshape society, despite attempts to slow its progression."
+                }
+            }
+        },
+        {
+            "Word": "Ambivalence",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means feeling two different ways about something at the same time.",
+                    "Synonyms": ["Mixed feelings", "Confusion", "Doubt", "Indecision"],
+                    "Sentence": "She felt ambivalence about eating the cake because she wanted it but worried it was unhealthy."
+                },
+                "Middle": {
+                    "Meaning": "is when someone has mixed or conflicting feelings about a person, situation, or decision.",
+                    "Synonyms": ["Uncertainty", "Conflict", "Worry", "Confusion"],
+                    "Sentence": "His ambivalence about moving to a new city came from being excited for new opportunities but sad to leave his friends."
+                },
+                "High": {
+                    "Meaning": "refers to the state of having simultaneous and conflicting emotions, attitudes, or thoughts toward a person, object, or situation, often resulting in uncertainty or hesitation.",
+                    "Synonyms": ["Uncertainty", "Conflict", "Worry", "Confusion"],
+                    "Sentence": "The politician’s ambivalence on the issue was evident, as he struggled to balance public opinion with personal beliefs."
+                }
+            }
+        },
+        {
+            "Word": "Amelioration",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means making something better.",
+                    "Synonyms": ["Fixing", "Helping", "Improving", "Changing"],
+                    "Sentence": "Planting trees is an example of amelioration to make the air cleaner."
+                },
+                "Middle": {
+                    "Meaning": "is the process of improving a bad or difficult situation to make it better.",
+                    "Synonyms": ["Enhancement", "Fixing", "Development", "Upgrade"],
+                    "Sentence": "The company focused on amelioration by improving working conditions for its employees."
+                },
+                "High": {
+                    "Meaning": "is the process of making meaningful improvements to a situation, reducing its negative aspects and enhancing its overall quality.",
+                    "Synonyms": ["Enhancement", "Fixing", "Development", "Upgrade"],
+                    "Sentence": "Efforts toward amelioration of the healthcare system have led to better access and quality of care for citizens."
+                }
+            }
+        },
+        {
+            "Word": "Conundrum",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means a very hard problem to solve.",
+                    "Synonyms": ["Puzzle", "Riddle", "Problem", "Mystery"],
+                    "Sentence": "It was a conundrum to figure out how to open the tricky jar."
+                },
+                "Middle": {
+                    "Meaning": "is a difficult question or situation that is tricky to figure out.",
+                    "Synonyms": ["Challenge", "Dilemma", "Problem", "Mystery"],
+                    "Sentence": "The team faced a conundrum when trying to find a solution to the unexpected issue."
+                },
+                "High": {
+                    "Meaning": "refers to a complex and puzzling problem or situation, often requiring creative solutions.",
+                    "Synonyms": ["Challenge", "Dilemma", "Problem", "Mystery"],
+                    "Sentence": "The conundrum of balancing work-life commitments required innovative thinking to resolve."
+                }
+            }
+        },
+        {
+            "Word": "Introspection",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means thinking deeply about yourself and your feelings.",
+                    "Synonyms": ["Thinking", "Reflection", "Wondering", "Looking inside"],
+                    "Sentence": "She took a moment of introspection to think about why she was upset."
+                },
+                "Middle": {
+                    "Meaning": "is the act of examining your own thoughts, feelings, and motivations to better understand yourself.",
+                    "Synonyms": ["Self-examination", "Insight", "Thinking", "Reflection"],
+                    "Sentence": "During moments of introspection, she reflected on her choices and how they affected others."
+                },
+                "High": {
+                    "Meaning": "refers to the process of self-reflection and analysis to gain deeper understanding of one's inner thoughts and emotions.",
+                    "Synonyms": ["Self-examination", "Insight", "Thinking", "Reflection"],
+                    "Sentence": "Through deep introspection, she gained insight into her motivations and the reasons behind her decisions."
+                }
+            }
+        },
+        {
+            "Word": "Machination",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means a secret plan to do something bad or tricky.",
+                    "Synonyms": ["Plan", "Trick", "Clever plan", "Strategy"],
+                    "Sentence": "The villain’s machination was to steal the treasure without anyone knowing."
+                },
+                "Middle": {
+                    "Meaning": "is a clever and often secret plan made to harm or trick someone.",
+                    "Synonyms": ["Plan", "Trick", "Clever plan", "Strategy"],
+                    "Sentence": "The machination of the group was uncovered when they tried to trick their competitors."
+                },
+                "High": {
+                    "Meaning": "refers to a cunning, deceitful, or secretive scheme designed to achieve a particular goal, often at the expense of others.",
+                    "Synonyms": ["Plan", "Trick", "Clever plan", "Strategy"],
+                    "Sentence": "The company’s machination to secretly outmaneuver its competitors showed a calculated and cunning strategy."
+                }
+            }
+        },
+        {
+            "Word": "Iridescence",
+            "Levels": {
+                "Low": {
+                    "Meaning": "means colors that change when you look at them from different angles.",
+                    "Synonyms": ["Colorful", "Shiny", "Sparkly", "Bright"],
+                    "Sentence": "The soap bubble had iridescence, with colors that changed as it moved."
+                },
+                "Middle": {
+                    "Meaning": "is when something shows shiny, changing colors, like a bubble.",
+                    "Synonyms": ["Multicolored", "Shiny", "Sparkly", "Bright"],
+                    "Sentence": "The peacock’s feathers shone with iridescence, showing different colors in the sunlight."
+                },
+                "High": {
+                    "Meaning": "refers to the phenomenon where surfaces appear to shift colors based on the angle of light or viewing.",
+                    "Synonyms": ["Multicolored", "Shiny", "Sparkly", "Bright"],
+                    "Sentence": "The scientist admired the iridescence of the crystal, where the interplay of light created a mesmerizing rainbow effect."
+                }
+            }
+        }
+        
+    ]
+    
+}
+
 
