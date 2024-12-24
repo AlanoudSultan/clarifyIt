@@ -8,7 +8,7 @@
 import Foundation
 
 struct WordsData: Codable {
-    let literature: [Word]
-    let academic: [Word]
-    let general: [Word]
+    let Literature: [Word]
+    let Academic: [Word]
+    let General: [Word]
 }

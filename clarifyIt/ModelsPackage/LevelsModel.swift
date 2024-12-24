@@ -8,7 +8,8 @@
 import Foundation
 
 struct Levels: Codable {
-    let low: Level
-    let middle: Level
-    let high: Level
+    let Low: Level
+    let Middle: Level
+    let High: Level
+
 }

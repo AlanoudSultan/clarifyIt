@@ -8,7 +8,7 @@
 import Foundation
 
 struct Level: Codable {
-    let meaning: String
-    let synonyms: [String]
-    let sentence: String
+    let Meaning: String
+    let Synonyms: [String]
+    let Sentence: String
 }

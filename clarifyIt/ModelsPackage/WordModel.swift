@@ -8,6 +8,6 @@
 import Foundation
 
 struct Word: Codable {
-    let word: String
-    let levels: Levels
+    let Word: String
+    let Levels: Levels
 }
