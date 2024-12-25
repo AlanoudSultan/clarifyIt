@@ -1,33 +1,44 @@
+//
+//  WordOfTheDayView.swift
+//  clarifyIt
+//
+//  Created by Nahed Almutairi on 23/12/2024.
+//
+
 import SwiftUI
 import AVFoundation
 
+// Class to manage text-to-speech functionality
 class SpeechManager: NSObject, AVSpeechSynthesizerDelegate {
-    @Binding var isSpeakerFull: Bool
-
+    @Binding var isSpeakerFull: Bool // Tracks whether the speaker is active
+    
     init(isSpeakerFull: Binding<Bool>) {
         _isSpeakerFull = isSpeakerFull
     }
-
+    
+    // Called when speech synthesis finishes
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
         isSpeakerFull = false
     }
 }
 
 struct WordOfTheDayView: View {
-    @ObservedObject var data = DataLoader()
-    @AppStorage("currentIndex") private var currentIndex = 0
-    @AppStorage("displayMode") private var displayMode = 0
-    @State private var isLearningComplete = false
-    @State private var isSpeakerFull = false
-    private let synthesizer = AVSpeechSynthesizer()
+    @ObservedObject var data = DataLoader() // Observing the data source
+    @AppStorage("currentIndex") private var currentIndex = 0 // Stores the current word index
+    @AppStorage("displayMode") private var displayMode = 0 // Stores the current display mode (meaning, synonyms, sentence)
     
-    @State private var speechManager: SpeechManager?
-
+    @State private var isLearningComplete = false // Tracks whether learning is complete
+    @State private var isSpeakerFull = false // Tracks speaker state
+    private let synthesizer = AVSpeechSynthesizer() // Text-to-speech synthesizer
+    
+    @State private var speechManager: SpeechManager? // Manager for speech synthesis
+    
     var body: some View {
         VStack(spacing: 40) {
+            // Top bar with close button and speaker button
             HStack {
-                Button(action: {
-                }) {
+                // Navigation to MainView
+                NavigationLink(destination: MainView().navigationBarBackButtonHidden(true)) {
                     Image(systemName: "xmark")
                         .font(.title)
                         .foregroundColor(Color.gray)
@@ -36,6 +47,7 @@ struct WordOfTheDayView: View {
                 
                 Spacer()
                 
+                // Speaker button to read out the word
                 Button(action: {
                     if !data.literature.isEmpty {
                         speak(text: data.literature[currentIndex].Word)
@@ -50,6 +62,7 @@ struct WordOfTheDayView: View {
             }
             .padding(5)
             
+            // Title and header text
             VStack(spacing: 15) {
                 Text("Word of the Day!")
                     .font(.custom("SF Pro Display", size: 40))
@@ -64,14 +77,17 @@ struct WordOfTheDayView: View {
                     .multilineTextAlignment(.center)
             }
             
+            // Main content area
             VStack(spacing: 30) {
                 if !data.literature.isEmpty {
+                    // Display the current word
                     Text(data.literature[currentIndex].Word)
                         .font(.custom("SF Pro Display", size: 45))
                         .fontWeight(.bold)
                         .lineSpacing(20)
                         .foregroundColor(Color("PurpleMatch"))
                     
+                    // Display meaning, synonyms, or example sentence based on the mode
                     if displayMode == 0 {
                         Text(data.literature[currentIndex].Levels.Low.Meaning)
                             .font(.custom("SF Pro Display", size: 28))
@@ -108,6 +124,7 @@ struct WordOfTheDayView: View {
             )
             .padding(.horizontal)
             
+            // Dots to indicate the current display mode
             HStack {
                 ForEach(0..<3, id: \.self) { index in
                     Circle()
@@ -123,6 +140,7 @@ struct WordOfTheDayView: View {
             
             Spacer()
         }
+        // Gesture to switch between display modes
         .gesture(
             DragGesture()
                 .onEnded { value in
@@ -137,12 +155,15 @@ struct WordOfTheDayView: View {
                     }
                 }
         )
+        // Initialize the SpeechManager on appear
         .onAppear {
             speechManager = SpeechManager(isSpeakerFull: $isSpeakerFull)
             synthesizer.delegate = speechManager
         }
+        
     }
     
+    // Header text based on the display mode
     private var headerText: String {
         switch displayMode {
         case 0:
@@ -156,8 +177,10 @@ struct WordOfTheDayView: View {
         }
     }
     
+    // Action buttons for Continue and Quiz
     private var actionButtons: some View {
         HStack(spacing: 20) {
+            // Continue to the next word
             Button(action: {
                 currentIndex = (currentIndex + 1) % data.literature.count
                 displayMode = 0
@@ -172,8 +195,8 @@ struct WordOfTheDayView: View {
                     .cornerRadius(15)
             }
             
-            Button(action: {
-            }) {
+            // Navigate to the Quiz view
+            NavigationLink(destination: AnalysisView().navigationBarBackButtonHidden(true)) {
                 Text("Quiz")
                     .font(.custom("SF Pro Display", size: 27))
                     .fontWeight(.medium)
@@ -191,6 +214,7 @@ struct WordOfTheDayView: View {
         .padding(.horizontal)
     }
     
+    // Speak the given text
     func speak(text: String) {
         let utterance = AVSpeechUtterance(string: text)
         utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
@@ -202,6 +226,7 @@ struct WordOfTheDayView: View {
 
 struct WordOfTheDayView_Previews: PreviewProvider {
     static var previews: some View {
-        WordOfTheDayView()
-    }
+        NavigationView {
+            WordOfTheDayView()
+        }}
 }
