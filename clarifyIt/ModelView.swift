@@ -1,38 +1,20 @@
 import SwiftUI
-import Foundation
-
-struct WordLevel: Decodable {
-    let meaning: String
-    let synonyms: [String]
-    let sentence: String
-}
-
-struct WordEntry: Decodable {
-    let word: String
-    let levels: [String: WordLevel]
-}
 
 class ModelView: ObservableObject {
     @Published var cards: [Card] = [] // Array to store cards
     @Published var selectedCards: [Card] = [] // To store selected cards
+    @ObservedObject var dataLoader = DataLoader() // Add instance of DataLoader
 
     init() {
-        loadWordsFromJSON()
+        // Modify to load data from DataLoader
+        loadWordsFromDataLoader()
     }
 
-    func loadWordsFromJSON() {
-        // Load and decode the JSON from the file
-        if let url = Bundle.main.url(forResource: "words", withExtension: "json"),
-           let data = try? Data(contentsOf: url),
-           let dictionary = try? JSONDecoder().decode([String: [WordEntry]].self, from: data) {
-            
-            // Flatten the words and add them to the cards array
-            let allWords = dictionary.values.flatMap { $0 }
-            cards = allWords.map { wordEntry in
-                Card(value: wordEntry.word)
-            }
-        } else {
-            print("Error loading or decoding JSON")
+    func loadWordsFromDataLoader() {
+        // Use the data from the DataLoader instead of loading directly from JSON
+        let allWords = dataLoader.literature + dataLoader.academic + dataLoader.general
+        cards = allWords.map { wordEntry in
+            Card(value: wordEntry.Word) // Access the 'Word' key from the JSON data
         }
     }
 
@@ -88,4 +70,23 @@ struct Card: Identifiable {
     let value: String
     var isMatched: Bool = false
     var isWrongMatch: Bool = false
+}
+
+// Rename 'Word' to avoid conflicts with other types
+struct WordModel: Identifiable, Decodable {  // Renamed 'Word' to 'WordModel'
+    let id = UUID()  // Each Word should have a unique identifier
+    let Word: String  // Corresponds to the 'Word' key in the JSON data
+    let Levels: WordLevels // The 'Levels' object that holds the meanings and synonyms
+}
+
+struct WordLevels: Decodable {  // Renamed 'Levels' to 'WordLevels' to avoid ambiguity
+    let Low: WordLevelDetail
+    let Middle: WordLevelDetail
+    let High: WordLevelDetail
+}
+
+struct WordLevelDetail: Decodable {
+    let Meaning: String
+    let Synonyms: [String]
+    let Sentence: String
 }
