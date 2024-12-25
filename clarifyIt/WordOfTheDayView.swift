@@ -1,24 +1,32 @@
-//
-//  WordOfTheDayView.swift
-//  clarifyIt
-//
-//  Created by Nahed Almutairi on 23/12/2024.
-//
-
 import SwiftUI
 import AVFoundation
 
+class SpeechManager: NSObject, AVSpeechSynthesizerDelegate {
+    @Binding var isSpeakerFull: Bool
+
+    init(isSpeakerFull: Binding<Bool>) {
+        _isSpeakerFull = isSpeakerFull
+    }
+
+    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
+        isSpeakerFull = false
+    }
+}
+
 struct WordOfTheDayView: View {
     @ObservedObject var data = DataLoader()
-    @State private var currentIndex = 0
-    @State private var displayMode = 0
+    @AppStorage("currentIndex") private var currentIndex = 0
+    @AppStorage("displayMode") private var displayMode = 0
+    @State private var isLearningComplete = false
+    @State private var isSpeakerFull = false
+    private let synthesizer = AVSpeechSynthesizer()
     
+    @State private var speechManager: SpeechManager?
+
     var body: some View {
         VStack(spacing: 40) {
-           
             HStack {
                 Button(action: {
-                
                 }) {
                     Image(systemName: "xmark")
                         .font(.title)
@@ -31,9 +39,10 @@ struct WordOfTheDayView: View {
                 Button(action: {
                     if !data.literature.isEmpty {
                         speak(text: data.literature[currentIndex].Word)
+                        isSpeakerFull.toggle()
                     }
                 }) {
-                    Image(systemName: "speaker.wave.2.fill")
+                    Image(systemName: isSpeakerFull ? "speaker.wave.3.fill" : "speaker.wave.3")
                         .font(.title)
                         .foregroundColor(Color("PurpleMatch"))
                 }
@@ -41,26 +50,25 @@ struct WordOfTheDayView: View {
             }
             .padding(5)
             
-     
-            VStack(spacing: 25) {
+            VStack(spacing: 15) {
                 Text("Word of the Day!")
                     .font(.custom("SF Pro Display", size: 40))
                     .fontWeight(.regular)
                     .lineSpacing(20)
                 
-                Text("This explains the meaning of the word")
-                    .font(.custom("SF Pro Display", size: 22))
+                Text(headerText)
+                    .font(.custom("SF Pro Display", size: 18))
                     .fontWeight(.regular)
-                    .lineSpacing(20)
+                    .lineSpacing(5)
                     .foregroundColor(.black)
+                    .multilineTextAlignment(.center)
             }
             
-      
             VStack(spacing: 30) {
                 if !data.literature.isEmpty {
                     Text(data.literature[currentIndex].Word)
                         .font(.custom("SF Pro Display", size: 45))
-                        .fontWeight(.semibold)
+                        .fontWeight(.bold)
                         .lineSpacing(20)
                         .foregroundColor(Color("PurpleMatch"))
                     
@@ -72,10 +80,10 @@ struct WordOfTheDayView: View {
                             .multilineTextAlignment(.center)
                             .padding()
                     } else if displayMode == 1 {
-                        Text(data.literature[currentIndex].Levels.Low.Synonyms.joined(separator: ", "))
-                            .font(.custom("SF Pro Display", size: 28))
+                        Text(data.literature[currentIndex].Levels.Low.Synonyms.joined(separator: "\n"))
+                            .font(.custom("SF Pro Display", size: 30))
                             .fontWeight(.regular)
-                            .lineSpacing(5)
+                            .lineSpacing(10)
                             .multilineTextAlignment(.center)
                             .padding()
                     } else if displayMode == 2 {
@@ -86,6 +94,7 @@ struct WordOfTheDayView: View {
                             .multilineTextAlignment(.center)
                             .padding()
                     }
+                    
                 } else {
                     Text("No words available")
                         .font(.title)
@@ -102,42 +111,91 @@ struct WordOfTheDayView: View {
             HStack {
                 ForEach(0..<3, id: \.self) { index in
                     Circle()
-                        .fill(index == (currentIndex % 3) ? Color("PurpleMatch") : Color.gray)
+                        .fill(index == (displayMode) ? Color("PurpleMatch") : Color.gray)
                         .frame(width: 10, height: 10)
                 }
             }
-            .padding(.top, 1) // نقل المؤشرات تحت المربع مباشرة
+            .padding(.top, 1)
+            
+            if displayMode == 2 {
+                actionButtons
+            }
             
             Spacer()
         }
-        
         .gesture(
             DragGesture()
                 .onEnded { value in
                     if value.translation.width < 0 {
                         if displayMode < 2 {
                             displayMode += 1
-                        } else {
-                            displayMode = 0
-                            currentIndex = (currentIndex + 1) % data.literature.count
                         }
                     } else if value.translation.width > 0 {
                         if displayMode > 0 {
                             displayMode -= 1
-                        } else {
-                            currentIndex = (currentIndex - 1 + data.literature.count) % data.literature.count
-                            displayMode = 2
                         }
                     }
                 }
         )
+        .onAppear {
+            speechManager = SpeechManager(isSpeakerFull: $isSpeakerFull)
+            synthesizer.delegate = speechManager
+        }
     }
     
-  
+    private var headerText: String {
+        switch displayMode {
+        case 0:
+            return "This explains the meaning of the word"
+        case 1:
+            return "These are words that mean the same"
+        case 2:
+            return "This is a sentence showing how to use the word"
+        default:
+            return ""
+        }
+    }
+    
+    private var actionButtons: some View {
+        HStack(spacing: 20) {
+            Button(action: {
+                currentIndex = (currentIndex + 1) % data.literature.count
+                displayMode = 0
+            }) {
+                Text("Continue")
+                    .font(.custom("SF Pro Display", size: 27))
+                    .fontWeight(.medium)
+                    .foregroundColor(.white)
+                    .padding()
+                    .frame(width: 180, height: 70)
+                    .background(Color("PurpleMatch"))
+                    .cornerRadius(15)
+            }
+            
+            Button(action: {
+            }) {
+                Text("Quiz")
+                    .font(.custom("SF Pro Display", size: 27))
+                    .fontWeight(.medium)
+                    .foregroundColor(Color("PurpleMatch"))
+                    .padding()
+                    .frame(width: 180, height: 70)
+                    .background(.white)
+                    .cornerRadius(15)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 15)
+                            .stroke(Color("PurpleMatch"), lineWidth: 2)
+                    )
+            }
+        }
+        .padding(.horizontal)
+    }
+    
     func speak(text: String) {
         let utterance = AVSpeechUtterance(string: text)
         utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
-        let synthesizer = AVSpeechSynthesizer()
+        utterance.rate = 0.45
+        utterance.pitchMultiplier = 1.1
         synthesizer.speak(utterance)
     }
 }
