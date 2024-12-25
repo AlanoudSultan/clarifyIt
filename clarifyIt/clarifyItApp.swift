@@ -9,10 +9,18 @@ import SwiftUI
 
 @main
 struct clarifyItApp: App {
+    @AppStorage("hasLaunchedBefore") private var hasLaunchedBefore: Bool = false
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if hasLaunchedBefore {
+                MainView()
+                        } else {
+                            ContentView()
+                        }
+//            ContentView(DataModel: DataModel())
+          //  ContentView()
             
-        }
+        }.modelContainer(for: [DataModel.self])
     }
 }

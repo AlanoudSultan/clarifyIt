@@ -8,12 +8,15 @@
 import SwiftUI
 
 struct AnalysisView: View {
+    @Environment(\.presentationMode) var presentationMode
+    
     var body: some View {
         NavigationView{
             VStack{
                 
                 HStack {
                     Button(action: {
+                        presentationMode.wrappedValue.dismiss()
                         // Handle the back action
                         print("Back button tapped")
                     }) {

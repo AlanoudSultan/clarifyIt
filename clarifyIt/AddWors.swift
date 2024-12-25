@@ -70,6 +70,8 @@ struct AddWordView: View {
         .alert(isPresented: $showAlert) {
             Alert(title: Text("No Word Written"), message: Text("Write a word in the box before pressing the button"), dismissButton: .default(Text("Ok")))
         }
+        .navigationBarBackButtonHidden(true)
+
     }
 }
 
