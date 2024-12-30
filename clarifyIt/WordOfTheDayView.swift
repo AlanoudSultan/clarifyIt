@@ -8,19 +8,6 @@
 import SwiftUI
 import AVFoundation
 
-// Class to manage text-to-speech functionality
-class SpeechManager: NSObject, AVSpeechSynthesizerDelegate {
-    @Binding var isSpeakerFull: Bool // Tracks whether the speaker is active
-    
-    init(isSpeakerFull: Binding<Bool>) {
-        _isSpeakerFull = isSpeakerFull
-    }
-    
-    // Called when speech synthesis finishes
-    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
-        isSpeakerFull = false
-    }
-}
 
 struct WordOfTheDayView: View {
     @ObservedObject var data = DataLoader() // Observing the data source
@@ -196,7 +183,7 @@ struct WordOfTheDayView: View {
             }
             
             // Navigate to the Quiz view
-            NavigationLink(destination: AnalysisView().navigationBarBackButtonHidden(true)) {
+            NavigationLink(destination: WritingView(word: data.literature[currentIndex].Word)) {
                 Text("Quiz")
                     .font(.custom("SF Pro Display", size: 27))
                     .fontWeight(.medium)
