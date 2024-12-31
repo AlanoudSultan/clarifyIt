@@ -137,7 +137,7 @@ struct AddWordView: View {
                     if displayMode == 2 {
                         HStack(spacing: 20) {
                             NavigationLink(destination: MainView()) {
-                                Text("Main")
+                                Text("Done")
                                     .font(.custom("SF Pro Display", size: 27))
                                     .fontWeight(.medium)
                                     .foregroundColor(.white)
@@ -167,20 +167,20 @@ struct AddWordView: View {
                 }
  else {
                     // Input View to add a word
-                    VStack(spacing: 20) {
+                    VStack(spacing: 40) {
                         Text("Write the word to add in the box")
                             .multilineTextAlignment(.center)
-                            .font(.custom("SF Pro Text", size: 30))
+                            .font(.custom("SF Pro Text", size: 25))
                             .font(.headline)
                             .padding(.top, 40)
                         
-                        TextField("Write here...", text: $word)
-                            .padding(.bottom , 80)
-                            .padding(.horizontal, 20)
-                            .frame(width: 350, height: 150)
+                        TextField("Write here...", text: $word, axis: .vertical)
+                            .font(.custom("SF Pro Text", size: 16)).fontWeight(.medium)
+                            .padding()
+                            .frame(width: 350, height: 150, alignment: .top)
                             .background(Color.gray1.opacity(0.5))
-                            .cornerRadius(10)
-                            .overlay(content: { RoundedRectangle(cornerRadius: 10).stroke(Color.dotsCO, lineWidth: 2) })
+                            .cornerRadius(12)
+                            .overlay(content: { RoundedRectangle(cornerRadius: 12).stroke(Color.dotsCO, lineWidth: 0.5) })
                         
                         Button(action: {
                             if word.isEmpty {
@@ -191,11 +191,11 @@ struct AddWordView: View {
                         }) {
                             Text("Add")
                                 .font(.custom("SF Pro Text", size: 25))
-                                .foregroundColor(.white)
+                                .foregroundColor(.white1)
                                 .frame(width: 300, height: 40)
                                 .padding()
                                 .background(Color.accent)
-                                .cornerRadius(8)
+                                .cornerRadius(12)
                         }
                     }
                     Spacer()

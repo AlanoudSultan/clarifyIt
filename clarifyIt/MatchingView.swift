@@ -1,4 +1,3 @@
-
 import SwiftUI
 
 struct MatchingView: View {
@@ -105,7 +104,8 @@ struct MatchingView: View {
                 .multilineTextAlignment(.leading)
                 .padding(.leading, 10.0)
                 .lineSpacing(3)
-                .frame(width: UIScreen.main.bounds.width - 250, height: 150)
+                .frame(width: UIScreen.main.bounds.width -
+250, height: 150)
                 .background(Color.white)
                 .overlay(
                     RoundedRectangle(cornerRadius: 12)
