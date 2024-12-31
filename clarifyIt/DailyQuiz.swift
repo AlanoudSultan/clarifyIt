@@ -33,57 +33,73 @@ struct DailyQuizView: View {
 
             // Title Text
             Text("Which type of a test do you want?")
-                .font(.headline)
+                .font(.system(size: 24, weight: .medium))
                 .multilineTextAlignment(.center)
                 .padding(.top, 40)
+                .padding(.bottom, 40)
 
             // Matching Button
-            Button(action: {
-                selectedQuiz = "Matching"  // Select Matching
-            }) {
-                Text("Matching")
-                    .foregroundColor(.black)
-                    .frame(maxWidth: .infinity)
-                    .padding()
-                    .background(Color.purple.opacity(0.2)) // Background color change
-                    .cornerRadius(30)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 30)
-                            .stroke(selectedQuiz == "Matching" ? Color.accent : Color.dotsCO, lineWidth: 2)  // Border color change
-                    )
-                    .padding(.horizontal, 20)
-            }
+                        Button(action: {
+                            selectedQuiz = "Matching"  // Select Matching
+                        }) {
+                            HStack(spacing: 10) { // Add spacing between icon and text
+                                Image(systemName: "checkmark.square")
+                                    .font(.system(size: 23, weight: .medium))
+                                    .foregroundColor(.accentColor)
+
+                                Text("Matching")
+                                    .font(.custom("SF Pro", size: 23))
+                                    .fontWeight(.medium)
+                                    .foregroundColor(.accentColor)
+                            }
+                            .frame(width: 327, height: 75)
+                            .background(Color.purple.opacity(0.2)) // Background color
+                            .cornerRadius(15)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 15)
+                                    .stroke(selectedQuiz == "Matching" ? Color.accentColor : Color("dotsCO"), lineWidth: 2) // Highlight the selected button
+                            )
+                        }
+                        .padding(.horizontal, 20)
 
             // Writing Button
-            Button(action: {
-                selectedQuiz = "Writing"  // Select Writing
-            }) {
-                Text("Writing")
-                    .foregroundColor(.black)
-                    .frame(maxWidth: .infinity)
-                    .padding()
-                    .background(Color.purple.opacity(0.2))// Background color change
-                    .cornerRadius(30)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 30)
-                            .stroke(selectedQuiz == "Writing" ? Color.accent : Color.dotsCO, lineWidth: 2)  // Border color change
-                    )
-                    .padding(.horizontal, 20)
-            }
+                       Button(action: {
+                           selectedQuiz = "Writing"  // Select Writing
+                       }) {
+                           HStack(spacing: 10) { // Add spacing between icon and text
+                               Image(systemName: "pencil")
+                                   .font(.system(size: 23, weight: .medium))
+                                   .foregroundColor(.accentColor)
+
+                               Text("Writing")
+                                   .font(.custom("SF Pro", size: 23))
+                                   .fontWeight(.medium)
+                                   .foregroundColor(.accentColor)
+                           }
+                           .frame(width: 327, height: 75)
+                           .background(Color.purple.opacity(0.2)) // Background color
+                           .cornerRadius(15)
+                           .overlay(
+                               RoundedRectangle(cornerRadius: 15)
+                                   .stroke(selectedQuiz == "Writing" ? Color.accentColor : Color("dotsCO"), lineWidth: 2) // Highlight the selected button
+                           )
+                       }
+                       .padding(.horizontal, 20)
 
             // Start Button
             Button(action: {
                 // Handle start quiz functionality here
             }) {
                 Text("Start")
+                    .font(.custom("SF Pro", size: 23))
+                    .fontWeight(.medium)
                     .foregroundColor(.white)
-                    .frame(maxWidth: .infinity)
                     .padding()
+                    .frame(width: 327, height: 75)
                     .background(Color.accentColor)
-                    .cornerRadius(8)
-                    .padding(.horizontal, 20)
-                    .padding(.top, 20) // Add top padding to separate from quiz type buttons
+                    .cornerRadius(15)
             }
+            .padding(.top, 20) // Add top padding to separate from quiz type buttons
 
             Spacer() // To push content up
         }

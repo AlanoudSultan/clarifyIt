@@ -10,6 +10,7 @@ import SwiftUI
 import AVFoundation
 
 
+
 struct AddWordView: View {
     @Environment(\.presentationMode) var presentationMode // To dismiss the current view
     @State private var word: String = "" // Stores the input word
@@ -132,36 +133,39 @@ struct AddWordView: View {
 
                     Spacer()
 
-                    // Navigation Buttons for Main and Quiz Pages
-                    HStack(spacing: 20) {
-                        NavigationLink(destination: MainView()) {
-                            Text("Main")
-                                .font(.custom("SF Pro Display", size: 27))
-                                .fontWeight(.medium)
-                                .foregroundColor(.white)
-                                .padding()
-                                .frame(width: 180, height: 70)
-                                .background(Color("PurpleMatch"))
-                                .cornerRadius(15)
-                        }
+                    // Show buttons only at the last displayMode
+                    if displayMode == 2 {
+                        HStack(spacing: 20) {
+                            NavigationLink(destination: MainView()) {
+                                Text("Main")
+                                    .font(.custom("SF Pro Display", size: 27))
+                                    .fontWeight(.medium)
+                                    .foregroundColor(.white)
+                                    .padding()
+                                    .frame(width: 180, height: 70)
+                                    .background(Color("PurpleMatch"))
+                                    .cornerRadius(15)
+                            }
 
-                        NavigationLink(destination: WritingView(word: word)) {
-                            Text("Quiz")
-                                .font(.custom("SF Pro Display", size: 27))
-                                .fontWeight(.medium)
-                                .foregroundColor(Color("PurpleMatch"))
-                                .padding()
-                                .frame(width: 180, height: 70)
-                                .background(.white)
-                                .cornerRadius(15)
-                                .overlay(
-                                    RoundedRectangle(cornerRadius: 15)
-                                        .stroke(Color("PurpleMatch"), lineWidth: 2)
-                                )
+                            NavigationLink(destination: WritingView(word: word)) {
+                                Text("Quiz")
+                                    .font(.custom("SF Pro Display", size: 27))
+                                    .fontWeight(.medium)
+                                    .foregroundColor(Color("PurpleMatch"))
+                                    .padding()
+                                    .frame(width: 180, height: 70)
+                                    .background(.white)
+                                    .cornerRadius(15)
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 15)
+                                            .stroke(Color("PurpleMatch"), lineWidth: 2)
+                                    )
+                            }
                         }
+                        .padding(.bottom)
                     }
-                    .padding(.bottom)
-                } else {
+                }
+ else {
                     // Input View to add a word
                     VStack(spacing: 20) {
                         Text("Write the word to add in the box")

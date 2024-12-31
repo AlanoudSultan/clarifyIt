@@ -84,6 +84,18 @@ struct WritingView: View {
                         Text("Try Again")
                             .font(.custom("SF Pro Display", size: 27))
                             .fontWeight(.medium)
+                            .foregroundColor(.white)
+                            .padding()
+                            .frame(width: 180, height: 70)
+                            .background(Color("PurpleMatch"))
+                            .cornerRadius(15)
+                    }
+
+                    // Done Button
+                    NavigationLink(destination: MainView()) {
+                        Text("Done")
+                            .font(.custom("SF Pro Display", size: 27))
+                            .fontWeight(.medium)
                             .foregroundColor(Color("PurpleMatch"))
                             .padding()
                             .frame(width: 180, height: 70)
@@ -92,19 +104,8 @@ struct WritingView: View {
                             .overlay(
                                 RoundedRectangle(cornerRadius: 15)
                                     .stroke(Color("PurpleMatch"), lineWidth: 2)
-                            )
-                    }
-
-                    // Done Button
-                    NavigationLink(destination: MainView()) {
-                        Text("Done")
-                            .font(.custom("SF Pro Display", size: 27))
-                            .fontWeight(.medium)
-                            .foregroundColor(.white)
-                            .padding()
-                            .frame(width: 180, height: 70)
-                            .background(Color("PurpleMatch"))
-                            .cornerRadius(15)
+                                )
+                           
                     }
                 }
                 .padding(.bottom)
