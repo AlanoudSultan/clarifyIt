@@ -49,12 +49,11 @@ struct SettingsView: View {
                             .font(.custom("SF Pro Text", size: 16)).fontWeight(.medium)
                         Spacer()
                         
-                        Picker("Landuage of Learning", selection: $user.selectedLanguage) {
-                                    
-                                    Text("Arabic").tag("Arabic")
-                                    Text("English").tag("English")
-                                }
-                                .pickerStyle(SegmentedPickerStyle())
+                        Picker("Landuage of Learning", selection: $user.selectedLanguage) {Text("Arabic").tag("Arabic")
+                            Text("English").tag("English")
+                        }
+                        .pickerStyle(SegmentedPickerStyle())
+                        .tint(.purple1)
                         
                         Spacer()
                         Spacer()
@@ -69,6 +68,7 @@ struct SettingsView: View {
                             Text("High").tag("High")
                         }
                         .pickerStyle(SegmentedPickerStyle())
+                        .tint(.purple1)
                         
                         
                         Spacer()
@@ -99,12 +99,7 @@ struct SettingsView: View {
                 .navigationBarBackButtonHidden(true)
             } //NavigationView Close
             
-//            .onAppear {
-//                
-//                updatedName = dataModel.name
-//                selectedLanguage = dataModel.selectedLanguage
-//                understandingLevel = dataModel.understandingLevel
-//            }
+
             
         }
     }
@@ -112,7 +107,8 @@ struct SettingsView: View {
 
 
     
-//
-//#Preview {
-//    SettingsView()
-//}
+
+#Preview {
+    SettingsView(user: .init(name: "Sara", selectedLanguage: "English", understandingLevel: "Low").self)
+}
+

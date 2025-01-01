@@ -10,188 +10,199 @@ import SwiftUI
 import SwiftData
 
 struct MainView: View {
-    
+    @State private var progress = 0.5
+
     //@Query var dataModel: [DataModel]
     @Query(sort:\ DataModel.name) var dataModel: [DataModel]
     
-    
+    //    @State private var selectedCatgory: String ?
     @State private var isSheetPresented = false
     
     var body: some View {
         NavigationView {
-
-            VStack( spacing: 10) {
-                VStack (alignment: .trailing) {
-                    ZStack(alignment: .topTrailing){
-                        
-                        // Gear icon
-                        NavigationLink(destination: SettingsView(user: dataModel.first ??  DataModel(name: "", selectedLanguage: "", understandingLevel: ""))) {
-                            Button(action: {
-                                
-                                self.isSheetPresented = true
-                            },label: {
-                                Image(systemName: "gearshape.2.fill")
-                                    .font(.system(size: 24))
-                                    .foregroundColor(.purple1)
-                                    .padding()
-                                    .background(Circle().fill(Color.gray1).frame(width: 45, height: 45))
-                                    .padding(10)
-                            })
-                            
-                        }
-                        .sheet(isPresented: $isSheetPresented) {
-                            SettingsView(user: dataModel.first ?? DataModel(name: "", selectedLanguage: "", understandingLevel: ""))
-                        }
-                    }
-                    HStack {
-                        VStack(alignment: .leading, spacing: 8) {
-//                            MARK: Edit double couts like this \(
-                            Text("Hi (datModel.first!.name) 👋")
-                                .font(.custom("SF Pro Text", size: 24)).fontWeight(.semibold)
-                            
-                            Text("Nice to see you again, let’s learn!")
-                                .font(.custom("SF Pro Text", size: 16))
-                                .fontWeight(.semibold)
-                        }
-                        Spacer()
-                        
-                    }
-                    .padding(.horizontal)
-                }
-                
-                // Progress Section
-                HStack {
-                    NavigationLink(destination: Streak()) {
-                        VStack {
-                            // "See all" button in top-right
-                            
-                            Text("See all")
-                                .font(.custom("SF Pro Text", size: 12))
-                                .fontWeight(.semibold)
-                                .foregroundColor(.purple1)
-                                .padding(.leading, 300)
-                                .padding(.top,10)
-                            
-                            // Content with Divider
-                            HStack(alignment: .center, spacing: 20) {
-                                Text("100 🔥")
-                                    .font(.custom("SF Pro Text", size: 32))
-                                
-                                Divider()
-                                    .frame(width: 1, height: 71)
-                                    .background(Color.purple1)
-                                    .padding(.bottom, 10)
-                                
-                                Text("🥉")
-                                    .font(.custom("SF Pro Text", size: 40))
-                            }
-                        }
-                        .padding(.bottom)
-                    }
+            ScrollView(.vertical){
                     
-                }
-                .padding(.horizontal, 15)
-                .background(Color.gray1).cornerRadius(12)
-                
-                Spacer()
-                
-                // What do you want to learn today?
-                
-                VStack(alignment: .leading, spacing: 12) {
-                    Text("What do you want to learn today?") .font(.custom("SF Pro Text", size: 20))
-                        .fontWeight(.medium)
-                    ScrollView(.horizontal){
-                        HStack(spacing: 20) {
-                            LearnCategoryView(emoji: "📚", title: "Academic")
-                            LearnCategoryView(emoji: "📜", title: "Literature")
-                            LearnCategoryView(emoji: "📰", title: "General")
-                            Circle()
-                                .fill(Color.gray1)
-                                .frame(width: 36, height: 36)
-                                .overlay(
-                                    Image(systemName: "chevron.right")
+                    VStack (spacing: 0) {
+                        ZStack(alignment: .topTrailing){
+                            
+                            // Gear icon
+                            NavigationLink(destination: SettingsView(user: dataModel.first ??  DataModel(name: "", selectedLanguage: "", understandingLevel: ""))) {
+                                Button(action: {
+                                    
+                                    self.isSheetPresented = true
+                                },label: {
+                                    Image(systemName: "gearshape.2.fill")
+                                        .font(.system(size: 24))
                                         .foregroundColor(.purple1)
-                                        .font(.system(size: 20))
-                                )
-                        }
-                    }
-                }
-                .padding(.horizontal)
-                Spacer()
-                
-                // Add Your Word Section
-                VStack(alignment: .leading, spacing: 12) {
-                    Text("Do you want to learn specific term?")
-                        .font(.custom("SF Pro Text", size: 20))
-                        .fontWeight(.medium)
-                    
-                    NavigationLink(destination: AddWordView()) {
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 12)
-                                .fill(Color.gray1)
-                                .frame(height: 66)
-                            Text("Add your word")
-                                .font(.custom("SF Pro Text", size: 24))
-                                .fontWeight(.semibold)
-                                .foregroundColor(.accent)
-                        }
-                    }.padding(10)
-                }
-                .padding(.horizontal)
-                Spacer()
-                
-                // Practice More Section
-                VStack(alignment: .leading, spacing: 12) {
-                    Text("Let’s practice more")
-                        .font(.custom("SF Pro Text", size: 20))
-                        .fontWeight(.medium)
-                    
-                    
-                    HStack {
-                        NavigationLink(destination: DailyQuizView()){
-                            Image(systemName: "pencil.and.list.clipboard")
-                                .font(.system(size: 24)).foregroundColor(.purple1)
-                            VStack(alignment: .leading) {
-                                Text("Daily Quiz")
-                                    .font(.custom("SF Pro Text", size: 24))
-                                    .fontWeight(.regular)
-                                    .foregroundColor(.black1)
+                                        .padding()
+                                        .background(Circle().fill(Color.gray1).frame(width: 45, height: 45))
+                                        .padding(10)
+                                })
                                 
-                                Text("sentences & matching")
-                                    .font(.custom("SF Pro Text", size: 12))
-                                    .fontWeight(.semibold)
-                                    .foregroundColor(.gray3)
                             }
                             Spacer()
+                                .padding(.leading)
+                                .sheet(isPresented: $isSheetPresented) {
+                                    SettingsView(user: dataModel.first ?? DataModel(name: "", selectedLanguage: "", understandingLevel: ""))
+                                }
+                        }
+                    }
+                
+                VStack( spacing: 30) {
+                    
+                    // Progress Section
+                    // الثلاث حالات للصوره
+                    // ربط فنكشن البروقرس
+                    HStack {
+                        VStack(alignment: .leading, spacing: 0) {
+                            Image("happy")
+                                .resizable()
+                                .frame(width: 138, height: 134)
+                                .cornerRadius (12)
+                                .padding(.leading, 8)
+                        }
+                        Spacer()
+                        Spacer()
+                        Spacer()
+                        
+                        VStack (alignment: .leading, spacing: 8) {
+                            //                                MARK: Edit double couts like this \(
+                            //                                Text("Hi dataModel.first!.name) 👋")
+                            Text("Hi Rama 👋")
+                                .font(.custom("SF Pro Text", size: 24))
+                                .fontWeight(.regular)
                             
-                            Circle()
-                                .fill(Color.gray7)
-                                .frame(width: 36, height: 36)
-                                .overlay(
-                                    Image(systemName: "chevron.right")
-                                        .foregroundColor(.purple1)
-                                        .font(.system(size: 20))
-                                )
+                            Text("You’re doing great! \n Keep learning")
+                                .multilineTextAlignment(.leading)
+                                .font(.custom("SF Pro Text", size: 14))
+                                .fontWeight(.semibold)
+                                .foregroundColor(.gray8)
+                            
+                            ProgressView(value: progress)
+                            
+                            Text("You have learned 25 words")
+                                .multilineTextAlignment(.leading)
+                                .font(.custom("SF Pro Text", size: 14))
+                                .fontWeight(.semibold)
+                                .foregroundColor(.gray8)
+                        }
+                        .padding(.horizontal, 10)
+                    }
+                    .padding(.horizontal, 15)
+                    .background(
+                        RoundedRectangle(cornerRadius: 12)
+                            .fill(Color.purple5.opacity(0.12))
+                            .frame(width: 350, height: 138)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 12)
+                                    .stroke(Color.purple1, lineWidth: 0.5)
+                            )
+                    )
+                    Spacer()
+                    
+                    // What do you want to learn today?
+                    // ربط الفئات مع صفحات ناهد
+                    VStack(alignment: .leading, spacing: 20) {
+                        Text("What do you want to learn today?")
+                            .font(.custom("SF Pro Text", size: 20))
+                            .fontWeight(.medium)
+                        ScrollView(.horizontal) {
+                            HStack(spacing: 16) {
+                                LearnCategoryView(emoji: "📚", title: "Academic Words")
+//                                {
+//                                    in selectedCatgory = category
+//                                }
+                                LearnCategoryView(emoji: "📜", title: "Literature Words")
+//                                {
+//                                    category in selectedCatgory = category
+//                                }
+                                LearnCategoryView(emoji: "📰", title: "General Words")
+//                                {
+//                                    category in selectedCatgory = category
+//                                }
+                               
+                            }
                         }
                     }
                     .padding(.horizontal)
-                    .frame(width: 350, height: 102)
-                    .background(Color.gray1)
-                    .cornerRadius(12)
+                    Spacer()
+
+                    // Add Your Word Section
+                    VStack(alignment: .leading, spacing: 20) {
+                        Text("Do you want to learn specific term?")
+                            .font(.custom("SF Pro Text", size: 20))
+                            .fontWeight(.medium)
+                        
+                        NavigationLink(destination: AddWordView()) {
+                            ZStack {
+                                RoundedRectangle(cornerRadius: 12)
+                                    .fill(Color.gray1)
+                                    .frame(height: 66)
+                                Text("Add your word")
+                                    .font(.custom("SF Pro Text", size: 24))
+                                    .fontWeight(.semibold)
+                                    .foregroundColor(.accent)
+                            }
+                        }.padding(10)
+                    }
+                    .padding(.horizontal)
+                    Spacer()
                     
+                    // Practice More Section
+                    VStack(alignment: .leading, spacing: 20) {
+                        Text("Let’s practice more")
+                            .font(.custom("SF Pro Text", size: 20))
+                            .fontWeight(.medium)
+                        
+                        
+                        HStack {
+                            NavigationLink(destination: DailyQuizView()){
+                                Image(systemName: "pencil.and.list.clipboard")
+                                    .font(.system(size: 24)).foregroundColor(.purple1)
+                                
+                                VStack(alignment: .leading) {
+                                    Text("Daily Quiz")
+                                        .font(.custom("SF Pro Text", size: 24))
+                                        .fontWeight(.regular)
+                                        .foregroundColor(.black1)
+                                    
+                                    Text("sentences & matching")
+                                        .font(.custom("SF Pro Text", size: 12))
+                                        .fontWeight(.semibold)
+                                        .foregroundColor(.gray3)
+                                }
+                                Spacer()
+                                
+                                Circle()
+                                    .fill(Color.gray7)
+                                    .frame(width: 36, height: 36)
+                                    .overlay(
+                                        Image(systemName: "chevron.right")
+                                            .foregroundColor(.purple1)
+                                            .font(.system(size: 20))
+                                    )
+                            }
+                        }
+                        .padding(.horizontal)
+                        .frame(width: 350, height: 102)
+                        .background(Color.gray1)
+                        .cornerRadius(12)
+                        
+                        
+                    }
+                    .padding(.horizontal)
                     
+                    Spacer()
                 }
-                .padding(.horizontal)
-                
-                Spacer()
+                .padding(.horizontal, 5)
+                .padding(.top)
             }
-            .padding(.horizontal, 5)
-            .padding(.top)
         }
         .navigationBarHidden(true)
         .navigationBarBackButtonHidden(true)
     }
 }
+
 
 struct LearnCategoryView: View {
     var emoji: String
@@ -200,21 +211,33 @@ struct LearnCategoryView: View {
     var body: some View {
         VStack {
             ZStack {
-                Circle()
+                Rectangle()
                     .fill(Color.gray1)
-                    .frame(width: 86, height: 86)
+                    .frame(width: 137, height: 138)
+                    .cornerRadius(12)
                 
-                Text(emoji)
-                    .font(.custom("SF Pro Text", size: 32))
+                VStack(alignment: .leading, spacing: 20) {
+                    Text(emoji)
+                        .font(.custom("SF Pro Text", size: 40))
+                    
+                    Text(title)
+                        .font(.custom("SF Pro Text", size: 16))
+                        .fontWeight(.semibold)
+                        .foregroundColor(.accent)
+                }
+//                .padding(.horizontal, 24)
+//                .padding(.vertical, 21)
+
+                
             }
-            Text(title)
-                .font(.custom("SF Pro Text", size: 14))
         }
     }
 }
 
 
 
+//DDD
 #Preview {
     MainView()
 }
+
