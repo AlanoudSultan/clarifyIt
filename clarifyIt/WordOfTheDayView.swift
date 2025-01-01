@@ -1,15 +1,8 @@
-//
-//  WordOfTheDayView.swift
-//  clarifyIt
-//
-//  Created by Nahed Almutairi on 23/12/2024.
-//
-
 import SwiftUI
 import AVFoundation
 
-
 struct WordOfTheDayView: View {
+    @Binding var progress: Double  // Accept progress as a Binding
     @ObservedObject var data = DataLoader() // Observing the data source
     @AppStorage("currentIndex") private var currentIndex = 0 // Stores the current word index
     @AppStorage("displayMode") private var displayMode = 0 // Stores the current display mode (meaning, synonyms, sentence)
@@ -26,9 +19,7 @@ struct WordOfTheDayView: View {
             HStack {
                 // Navigation to MainView
                 NavigationLink(destination: MainView().navigationBarBackButtonHidden(true)) {
-                    Image(systemName: "xmark")
-                        .font(.title)
-                        .foregroundColor(Color.gray)
+                    
                 }
                 .padding()
                 
@@ -67,8 +58,10 @@ struct WordOfTheDayView: View {
             // Main content area
             VStack(spacing: 30) {
                 if !data.literature.isEmpty {
+                    // Ensure the currentIndex is within bounds
+                    let safeIndex = min(currentIndex, data.literature.count - 1)
                     // Display the current word
-                    Text(data.literature[currentIndex].Word)
+                    Text(data.literature[safeIndex].Word)
                         .font(.custom("SF Pro Display", size: 45))
                         .fontWeight(.bold)
                         .lineSpacing(20)
@@ -76,21 +69,21 @@ struct WordOfTheDayView: View {
                     
                     // Display meaning, synonyms, or example sentence based on the mode
                     if displayMode == 0 {
-                        Text(data.literature[currentIndex].Levels.Low.Meaning)
+                        Text(data.literature[safeIndex].Levels.Low.Meaning)
                             .font(.custom("SF Pro Display", size: 28))
                             .fontWeight(.regular)
                             .lineSpacing(5)
                             .multilineTextAlignment(.center)
                             .padding()
                     } else if displayMode == 1 {
-                        Text(data.literature[currentIndex].Levels.Low.Synonyms.joined(separator: "\n"))
+                        Text(data.literature[safeIndex].Levels.Low.Synonyms.joined(separator: "\n"))
                             .font(.custom("SF Pro Display", size: 30))
                             .fontWeight(.regular)
                             .lineSpacing(10)
                             .multilineTextAlignment(.center)
                             .padding()
                     } else if displayMode == 2 {
-                        Text(data.literature[currentIndex].Levels.Low.Sentence)
+                        Text(data.literature[safeIndex].Levels.Low.Sentence)
                             .font(.custom("SF Pro Display", size: 28))
                             .fontWeight(.regular)
                             .lineSpacing(5)
@@ -147,8 +140,7 @@ struct WordOfTheDayView: View {
             speechManager = SpeechManager(isSpeakerFull: $isSpeakerFull)
             synthesizer.delegate = speechManager
         }
-        .navigationBarBackButtonHidden(true)
-
+        .navigationBarBackButtonHidden(false)
     }
     
     // Header text based on the display mode
@@ -170,8 +162,12 @@ struct WordOfTheDayView: View {
         HStack(spacing: 20) {
             // Continue to the next word
             Button(action: {
+                // Ensure the currentIndex stays within bounds
                 currentIndex = (currentIndex + 1) % data.literature.count
                 displayMode = 0
+                
+                // Update progress when Continue button is tapped
+                progress = min(progress + 0.1, 1.0)  // Ensure it doesn't exceed 100%
             }) {
                 Text("Continue")
                     .font(.custom("SF Pro Display", size: 27))
@@ -210,11 +206,4 @@ struct WordOfTheDayView: View {
         utterance.pitchMultiplier = 1.1
         synthesizer.speak(utterance)
     }
-}
-
-struct WordOfTheDayView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationView {
-            WordOfTheDayView()
-        }}
 }

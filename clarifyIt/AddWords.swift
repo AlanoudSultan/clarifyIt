@@ -289,6 +289,3 @@ struct AddWordView: View {
     }
 }
 
-#Preview {
-    AddWordView()
-}
