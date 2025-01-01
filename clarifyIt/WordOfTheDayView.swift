@@ -147,7 +147,8 @@ struct WordOfTheDayView: View {
             speechManager = SpeechManager(isSpeakerFull: $isSpeakerFull)
             synthesizer.delegate = speechManager
         }
-        
+        .navigationBarBackButtonHidden(true)
+
     }
     
     // Header text based on the display mode

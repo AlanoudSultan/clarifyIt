@@ -22,11 +22,13 @@ class DataModel {
     var name: String = ""
     var selectedLanguage: String = ""
     var understandingLevel: String = ""
-    
+//    var selectedCatgory: String? = nil
+
     init(name: String, selectedLanguage: String, understandingLevel: String) {
         self.name = name
         self.selectedLanguage = selectedLanguage
         self.understandingLevel = understandingLevel
+//        self.selectedCatgory = selectedCatgory
     }
     
     //[String: [String]] = [:]

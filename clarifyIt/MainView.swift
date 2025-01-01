@@ -15,7 +15,8 @@ struct MainView: View {
     //@Query var dataModel: [DataModel]
     @Query(sort:\ DataModel.name) var dataModel: [DataModel]
     
-    //    @State private var selectedCatgory: String ?
+//    @State public var selectedCatgory: String
+    
     @State private var isSheetPresented = false
     
     var body: some View {
@@ -102,25 +103,29 @@ struct MainView: View {
                     
                     // What do you want to learn today?
                     // ربط الفئات مع صفحات ناهد
-                    VStack(alignment: .leading, spacing: 20) {
-                        Text("What do you want to learn today?")
-                            .font(.custom("SF Pro Text", size: 20))
-                            .fontWeight(.medium)
-                        ScrollView(.horizontal) {
-                            HStack(spacing: 16) {
-                                LearnCategoryView(emoji: "📚", title: "Academic Words")
-//                                {
-//                                    in selectedCatgory = category
-//                                }
-                                LearnCategoryView(emoji: "📜", title: "Literature Words")
-//                                {
-//                                    category in selectedCatgory = category
-//                                }
-                                LearnCategoryView(emoji: "📰", title: "General Words")
-//                                {
-//                                    category in selectedCatgory = category
-//                                }
-                               
+                    NavigationLink(destination: WordOfTheDayView()) {
+                        VStack(alignment: .leading, spacing: 20) {
+                            Text("What do you want to learn today?")
+                                .font(.custom("SF Pro Text", size: 20))
+                                .fontWeight(.medium)
+                                .foregroundColor(.black1)
+
+                            ScrollView(.horizontal) {
+                                HStack(spacing: 16) {
+                                    LearnCategoryView(emoji: "📚", title: "Academic Words")
+                                    //                                {
+                                    //                                    in selectedCatgory = category
+                                    //                                }
+                                    LearnCategoryView(emoji: "📜", title: "Literature Words")
+                                    //                                {
+                                    //                                    category in selectedCatgory = category
+                                    //                                }
+                                    LearnCategoryView(emoji: "📰", title: "General Words")
+                                    //                                {
+                                    //                                    category in selectedCatgory = category
+                                    //                                }
+                                    
+                                }
                             }
                         }
                     }
@@ -132,6 +137,8 @@ struct MainView: View {
                         Text("Do you want to learn specific term?")
                             .font(.custom("SF Pro Text", size: 20))
                             .fontWeight(.medium)
+                            .foregroundColor(.black1)
+
                         
                         NavigationLink(destination: AddWordView()) {
                             ZStack {

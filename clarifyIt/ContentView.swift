@@ -12,7 +12,8 @@ struct ContentView: View {
     @State public var name = ""
     @State public var selectedLanguage = ""
     @State public var understandingLevel = ""
-    
+    @State public var selectedCatgory = ""
+
     @State private var isActive = false
     
     
