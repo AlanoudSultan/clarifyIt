@@ -1,10 +1,18 @@
+//
+//  ContentView.swift
+//  clarifyIt
+//
+//  Created by Alanoud Abaalkhail on 14/06/1446 AH.
+//
+
+
 import SwiftUI
 import SwiftData
 
 struct MainView: View {
-    @State private var progress = 0.0  // Initial progress set to 0%
-    @State private var totalWords = 10 // Total words to learn
-    @State private var wordsLearned: Int = 0
+    @State private var progress = 0.2  // Initial progress set to 0%
+    @State var selectedCategory : String
+//    @State private var wordsLearned: Int = 0
     
     @Query(sort:\ DataModel.name) var dataModel: [DataModel]
     @State  var catIsPresented = false
@@ -12,40 +20,17 @@ struct MainView: View {
     
     @State private var isSheetPresented = false
     
-    struct LearnCategoryView: View {
-        var emoji: String
-        var title: String
-        
-        var body: some View {
-            VStack {
-                ZStack {
-                    Rectangle()
-                        .fill(Color.gray1)
-                        .frame(width: 137, height: 138)
-                        .cornerRadius(12)
-                    
-                    VStack(alignment: .leading, spacing: 20) {
-                        Text(emoji)
-                            .font(.custom("SF Pro Text", size: 40))
-                        
-                        Text(title)
-                            .font(.custom("SF Pro Text", size: 16))
-                            .fontWeight(.semibold)
-                            .foregroundColor(.accent)
-                    }
-                }
-            }
-        }
-    }
-    
     var body: some View {
         NavigationView {
             ScrollView(.vertical){
+                
                 VStack (spacing: 0) {
                     ZStack(alignment: .topTrailing) {
+                        
                         // Gear icon
                         NavigationLink(destination: SettingsView(user: dataModel.first ?? DataModel(name: "", selectedLanguage: "", understandingLevel: ""))) {
                             Button(action: {
+                                
                                 self.isSheetPresented = true
                             }, label: {
                                 Image(systemName: "gearshape.2.fill")
@@ -55,16 +40,21 @@ struct MainView: View {
                                     .background(Circle().fill(Color.gray1).frame(width: 45, height: 45))
                                     .padding(10)
                             })
+                            
                         }
                         Spacer()
                             .padding(.leading)
                             .sheet(isPresented: $isSheetPresented) {
                                 SettingsView(user: dataModel.first ?? DataModel(name: "", selectedLanguage: "", understandingLevel: ""))
-                            }
+                        }
                     }
+                }
                     
                     VStack(spacing: 30) {
+                        
                         // Progress Section
+                        
+                        
                         HStack {
                             VStack(alignment: .leading, spacing: 0) {
                                 Image("happy")
@@ -74,10 +64,14 @@ struct MainView: View {
                                     .padding(.leading, 8)
                             }
                             Spacer()
+                            Spacer()
+                            Spacer()
                             
                             VStack(alignment: .leading, spacing: 8) {
+                                //MARK: Edit double couts like this \(
+//                                Text("Hi \(dataModel.first!.name) 👋")
                                 Text("Hi Rama 👋")
-                                    .font(.custom("SF Pro Text", size: 24))
+                                    .font(.custom("SF Pro Text", size: 20))
                                     .fontWeight(.regular)
                                 
                                 Text("You’re doing great! \n Keep learning")
@@ -86,10 +80,9 @@ struct MainView: View {
                                     .fontWeight(.semibold)
                                     .foregroundColor(.gray8)
                                 
-                                ProgressView(value: progress, total: 1) // Normalized progress (0 to 1)
-                                    .progressViewStyle(LinearProgressViewStyle())
+                                ProgressView(value: progress)
                                 
-                                Text("You have learned \(wordsLearned) words")
+                                Text("You have learned 25 words")
                                     .multilineTextAlignment(.leading)
                                     .font(.custom("SF Pro Text", size: 14))
                                     .fontWeight(.semibold)
@@ -107,33 +100,40 @@ struct MainView: View {
                                         .stroke(Color.purple1, lineWidth: 0.5)
                                 )
                         )
-                        .onChange(of: progress) { newProgress in
-                            // Dynamically update words learned based on progress
-                            wordsLearned = Int(newProgress * Double(totalWords))
-                            print("Updated progress in MainView: \(newProgress)")  // Debugging
-                        }
-                    
-                        // Word of the Day Section
-                        NavigationLink(destination: WordOfTheDayView(progress: $progress)) {  // Pass progress here
-                            VStack(alignment: .leading, spacing: 20) {
-                                Text("What do you want to learn today?")
-                                    .font(.custom("SF Pro Text", size: 20))
-                                    .fontWeight(.medium)
-                                    .foregroundColor(.black1)
-                                
-                                ScrollView(.horizontal) {
-                                    HStack(spacing: 16) {
-                                        LearnCategoryView(emoji: "📚", title: "Academic Words")
-                                        LearnCategoryView(emoji: "📜", title: "Literature Words")
-                                        LearnCategoryView(emoji: "📰", title: "General Words")
+                        Spacer()
+
+                        // What do you want to learn today?
+                        
+                        VStack(alignment: .leading, spacing: 20) {
+                            Text("What do you want to learn today?")
+                                .font(.custom("SF Pro Text", size: 20))
+                                .fontWeight(.medium)
+                                .foregroundColor(.black1)
+                            
+                            ScrollView(.horizontal) {
+                                HStack {
+                                    NavigationLink(destination: WordOfTheDayView(selectedCategory: "Academic")) {
+                                        HStack(spacing: 16) {
+                                            LearnCategoryView(emoji: "📚", title: "Academic Words")
+                                        }
+                                    }
+                                    NavigationLink(destination: WordOfTheDayView(selectedCategory: "lett")) {
+                                        HStack(spacing: 16) {
+                                            LearnCategoryView(emoji: "📜", title: "Literature Words")
+                                        }
+                                        
+                                    }
+                                    NavigationLink(destination: WordOfTheDayView(selectedCategory: "general")) {
+                                        HStack(spacing: 16) {
+                                            LearnCategoryView(emoji: "📰", title: "General Words")
+                                        }
                                     }
                                 }
                             }
                         }
                         .padding(.horizontal)
-                        
                         Spacer()
-                        
+                            
                         // Add Your Word Section
                         VStack(alignment: .leading, spacing: 20) {
                             Text("Do you want to learn specific term?")
@@ -154,7 +154,6 @@ struct MainView: View {
                             }.padding(10)
                         }
                         .padding(.horizontal)
-                        
                         Spacer()
                         
                         // Practice More Section
@@ -162,6 +161,8 @@ struct MainView: View {
                             Text("Let’s practice more")
                                 .font(.custom("SF Pro Text", size: 20))
                                 .fontWeight(.medium)
+                            
+                            
                             
                             HStack {
                                 NavigationLink(destination: DailyQuizView()) {
@@ -195,15 +196,49 @@ struct MainView: View {
                             .frame(width: 350, height: 102)
                             .background(Color.gray1)
                             .cornerRadius(12)
+                            
+                            
                         }
                         .padding(.horizontal)
                         
                         Spacer()
                     }
+                    .padding(.horizontal, 5)
+                    .padding(.top)
                 }
             }
             .navigationBarHidden(true)
             .navigationBarBackButtonHidden(true)
         }
     }
+
+
+struct LearnCategoryView: View {
+    var emoji: String
+    var title: String
+    
+    var body: some View {
+        VStack {
+            ZStack {
+                Rectangle()
+                    .fill(Color.gray1)
+                    .frame(width: 137, height: 138)
+                    .cornerRadius(12)
+                
+                VStack(alignment: .leading, spacing: 20) {
+                    Text(emoji)
+                        .font(.custom("SF Pro Text", size: 40))
+                    
+                    Text(title)
+                        .font(.custom("SF Pro Text", size: 16))
+                        .fontWeight(.semibold)
+                        .foregroundColor(.accent)
+                }
+            }
+        }
+    }
+}
+
+#Preview {
+    MainView(selectedCategory: "")
 }
