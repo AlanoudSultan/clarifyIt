@@ -16,13 +16,7 @@ struct WritingView: View {
                 Button(action: {
                     presentationMode.wrappedValue.dismiss() // Dismiss to the previous view
                 }) {
-                    Image(systemName: "chevron.left")
-                        .font(.system(size: 24, weight: .heavy))
-                        .foregroundColor(Color("PurpleMatch"))
                     
-                    Text("Back")
-                        .font(.system(size: 24, weight: .regular)) // Bold text
-                        .foregroundColor(Color("PurpleMatch"))
                 }}
                 
                 Spacer()

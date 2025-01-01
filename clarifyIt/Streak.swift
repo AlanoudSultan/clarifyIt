@@ -28,13 +28,7 @@ struct Streak: View {
             ZStack {
                 VStack {
                     HStack {
-                        NavigationLink(destination: MainView()) {
-                            HStack {
-                                Image(systemName: "chevron.backward")
-                                    .bold()
-                                Text("Back")
-                            }
-                        }
+                        NavigationLink(destination: MainView()) {                        }
                         .padding(.leading, 20)
                         Spacer()
                     }

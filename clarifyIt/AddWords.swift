@@ -40,13 +40,7 @@ struct AddWordView: View {
                         Button(action: {
                             presentationMode.wrappedValue.dismiss() // Dismiss the view
                         }) {
-                            HStack {
-                                Image(systemName: "chevron.left")
-                                    .foregroundColor(.accentColor)
-                                    .imageScale(.large)
-                                Text("Back")
-                                    .foregroundColor(.accentColor)
-                            }
+                            
                         }
                     }
                     Spacer()

@@ -22,15 +22,6 @@ struct DailyQuizView: View {
                     Button(action: {
                         presentationMode.wrappedValue.dismiss() // Dismiss to the previous view
                     }) {
-                        HStack {
-                            Image(systemName: "chevron.left")
-                                .font(.system(size: 24, weight: .heavy))
-                                .foregroundColor(Color("PurpleMatch"))
-
-                            Text("Back")
-                                .font(.system(size: 24, weight: .regular)) // Regular text
-                                .foregroundColor(Color("PurpleMatch"))
-                        }
                     }
 
                     Spacer() // Push the button to the left side
