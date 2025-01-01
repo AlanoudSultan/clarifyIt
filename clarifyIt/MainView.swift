@@ -11,10 +11,11 @@ import SwiftData
 
 struct MainView: View {
     @State private var progress = 0.5
+    @State var selectedCategory : String
 
     //@Query var dataModel: [DataModel]
     @Query(sort:\ DataModel.name) var dataModel: [DataModel]
-    
+    @State  var catIsPresented = false
 //    @State public var selectedCatgory: String
     
     @State private var isSheetPresented = false
@@ -49,7 +50,7 @@ struct MainView: View {
                         }
                     }
                 
-                VStack( spacing: 30) {
+                VStack(spacing: 30) {
                     
                     // Progress Section
                     // الثلاث حالات للصوره
@@ -67,10 +68,10 @@ struct MainView: View {
                         Spacer()
                         
                         VStack (alignment: .leading, spacing: 8) {
-                            //                                MARK: Edit double couts like this \(
-                            //                                Text("Hi dataModel.first!.name) 👋")
-                            Text("Hi Rama 👋")
-                                .font(.custom("SF Pro Text", size: 24))
+                            //MARK: Edit double couts like this \(
+                            Text("Hi \(dataModel.first!.name) 👋")
+//                            Text("Hi Rama 👋")
+                                .font(.custom("SF Pro Text", size: 20))
                                 .fontWeight(.regular)
                             
                             Text("You’re doing great! \n Keep learning")
@@ -103,28 +104,29 @@ struct MainView: View {
                     
                     // What do you want to learn today?
                     // ربط الفئات مع صفحات ناهد
-                    NavigationLink(destination: WordOfTheDayView()) {
-                        VStack(alignment: .leading, spacing: 20) {
-                            Text("What do you want to learn today?")
-                                .font(.custom("SF Pro Text", size: 20))
-                                .fontWeight(.medium)
-                                .foregroundColor(.black1)
-
-                            ScrollView(.horizontal) {
-                                HStack(spacing: 16) {
-                                    LearnCategoryView(emoji: "📚", title: "Academic Words")
-                                    //                                {
-                                    //                                    in selectedCatgory = category
-                                    //                                }
-                                    LearnCategoryView(emoji: "📜", title: "Literature Words")
-                                    //                                {
-                                    //                                    category in selectedCatgory = category
-                                    //                                }
-                                    LearnCategoryView(emoji: "📰", title: "General Words")
-                                    //                                {
-                                    //                                    category in selectedCatgory = category
-                                    //                                }
+                    VStack(alignment: .leading, spacing: 20){
+                        Text("What do you want to learn today?")
+                            .font(.custom("SF Pro Text", size: 20))
+                            .fontWeight(.medium)
+                            .foregroundColor(.black1)
+                        
+                        ScrollView(.horizontal) {
+                            HStack {
+                                NavigationLink(destination: WordOfTheDayView(selectedCategory: "Academic")) {
+                                    HStack(spacing: 16) {
+                                        LearnCategoryView(emoji: "📚", title: "Academic Words")
+                                    }
+                                }
+                                NavigationLink(destination: WordOfTheDayView(selectedCategory: "lett")) {
+                                    HStack(spacing: 16) {
+                                        LearnCategoryView(emoji: "📜", title: "Literature Words")
+                                    }
                                     
+                                }
+                                NavigationLink(destination: WordOfTheDayView(selectedCategory: "general")) {
+                                    HStack(spacing: 16) {
+                                        LearnCategoryView(emoji: "📰", title: "General Words")
+                                    }
                                 }
                             }
                         }
@@ -245,6 +247,6 @@ struct LearnCategoryView: View {
 
 //DDD
 #Preview {
-    MainView()
+    MainView(selectedCategory: "")
 }
 

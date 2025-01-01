@@ -92,7 +92,7 @@ struct ContentView: View {
                         }
                         .padding(.bottom, 200)
                         
-                        NavigationLink(destination: MainView(), isActive: $isActive) {
+                        NavigationLink(destination: MainView(selectedCategory: ""), isActive: $isActive) {
                             Button {
                                 context.insert(DataModel(name: name, selectedLanguage: selectedLanguage, understandingLevel: "Low"))
                                 isActive = true

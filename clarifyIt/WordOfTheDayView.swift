@@ -7,13 +7,18 @@
 
 import SwiftUI
 import AVFoundation
+import _SwiftData_SwiftUI
 
 
 struct WordOfTheDayView: View {
+    var selectedCategory: String
+    @Query(sort:\ DataModel.name) var dataModel: [DataModel]
+
     @ObservedObject var data = DataLoader() // Observing the data source
     @AppStorage("currentIndex") private var currentIndex = 0 // Stores the current word index
     @AppStorage("displayMode") private var displayMode = 0 // Stores the current display mode (meaning, synonyms, sentence)
     
+    @State private var filteredWords: [Word] = []
     @State private var isLearningComplete = false // Tracks whether learning is complete
     @State private var isSpeakerFull = false // Tracks speaker state
     private let synthesizer = AVSpeechSynthesizer() // Text-to-speech synthesizer
@@ -25,7 +30,7 @@ struct WordOfTheDayView: View {
             // Top bar with close button and speaker button
             HStack {
                 // Navigation to MainView
-                NavigationLink(destination: MainView().navigationBarBackButtonHidden(true)) {
+                NavigationLink(destination: MainView(selectedCategory: "").navigationBarBackButtonHidden(true)) {
                     Image(systemName: "xmark")
                         .font(.title)
                         .foregroundColor(Color.gray)
@@ -36,8 +41,8 @@ struct WordOfTheDayView: View {
                 
                 // Speaker button to read out the word
                 Button(action: {
-                    if !data.literature.isEmpty {
-                        speak(text: data.literature[currentIndex].Word)
+                    if !filteredWords.isEmpty {
+                        speak(text: filteredWords[currentIndex].Word)
                         isSpeakerFull.toggle()
                     }
                 }) {
@@ -66,9 +71,9 @@ struct WordOfTheDayView: View {
             
             // Main content area
             VStack(spacing: 30) {
-                if !data.literature.isEmpty {
+                if !filteredWords.isEmpty {
                     // Display the current word
-                    Text(data.literature[currentIndex].Word)
+                    Text(filteredWords[currentIndex].Word)
                         .font(.custom("SF Pro Display", size: 45))
                         .fontWeight(.bold)
                         .lineSpacing(20)
@@ -76,21 +81,21 @@ struct WordOfTheDayView: View {
                     
                     // Display meaning, synonyms, or example sentence based on the mode
                     if displayMode == 0 {
-                        Text(data.literature[currentIndex].Levels.Low.Meaning)
+                        Text(filteredWords[currentIndex].Levels.Low.Meaning)
                             .font(.custom("SF Pro Display", size: 28))
                             .fontWeight(.regular)
                             .lineSpacing(5)
                             .multilineTextAlignment(.center)
                             .padding()
                     } else if displayMode == 1 {
-                        Text(data.literature[currentIndex].Levels.Low.Synonyms.joined(separator: "\n"))
+                        Text(filteredWords[currentIndex].Levels.Low.Synonyms.joined(separator: "\n"))
                             .font(.custom("SF Pro Display", size: 30))
                             .fontWeight(.regular)
                             .lineSpacing(10)
                             .multilineTextAlignment(.center)
                             .padding()
                     } else if displayMode == 2 {
-                        Text(data.literature[currentIndex].Levels.Low.Sentence)
+                        Text(filteredWords[currentIndex].Levels.Low.Sentence)
                             .font(.custom("SF Pro Display", size: 28))
                             .fontWeight(.regular)
                             .lineSpacing(5)
@@ -146,10 +151,24 @@ struct WordOfTheDayView: View {
         .onAppear {
             speechManager = SpeechManager(isSpeakerFull: $isSpeakerFull)
             synthesizer.delegate = speechManager
+            filterWordsByCategory()
         }
         .navigationBarBackButtonHidden(true)
 
     }
+    
+    private func filterWordsByCategory() {
+           switch selectedCategory {
+           case "Literature":
+               filteredWords = data.literature
+           case "Academic":
+               filteredWords = data.academic
+           case "General":
+               filteredWords = data.general
+           default:
+               filteredWords = []
+           }
+       }
     
     // Header text based on the display mode
     private var headerText: String {
@@ -170,7 +189,7 @@ struct WordOfTheDayView: View {
         HStack(spacing: 20) {
             // Continue to the next word
             Button(action: {
-                currentIndex = (currentIndex + 1) % data.literature.count
+                currentIndex = (currentIndex + 1) % filteredWords.count
                 displayMode = 0
             }) {
                 Text("Continue")
@@ -184,7 +203,7 @@ struct WordOfTheDayView: View {
             }
             
             // Navigate to the Quiz view
-            NavigationLink(destination: WritingView(word: data.literature[currentIndex].Word)) {
+            NavigationLink(destination: WritingView(word: filteredWords[currentIndex].Word)) {
                 Text("Quiz")
                     .font(.custom("SF Pro Display", size: 27))
                     .fontWeight(.medium)
@@ -215,6 +234,7 @@ struct WordOfTheDayView: View {
 struct WordOfTheDayView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            WordOfTheDayView()
+            WordOfTheDayView(selectedCategory: "")
         }}
 }
+

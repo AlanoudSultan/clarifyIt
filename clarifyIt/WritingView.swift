@@ -7,7 +7,7 @@ struct WritingView: View {
     @State private var isAnalysisMode: Bool = false
     @State private var showAlert: Bool = false // To control alert visibility
     @Environment(\.presentationMode) var presentationMode
-    
+    @Environment(\.dismiss) var dismiss
     var body: some View {
         VStack {
             // Back Button
@@ -86,7 +86,8 @@ struct WritingView: View {
                     }
 
                     // Done Button
-                    NavigationLink(destination: MainView()) {
+                    NavigationLink(destination: MainView(selectedCategory: "")) {
+                        
                         Text("Done")
                             .font(.custom("SF Pro Display", size: 27))
                             .fontWeight(.medium)
@@ -124,7 +125,7 @@ struct WritingView: View {
         }
         .background(Color.white)
         .navigationBarTitleDisplayMode(.inline)
-        .navigationBarBackButtonHidden(true) // Hide default back button
+        
         .alert(isPresented: $showAlert) {
             Alert(
                 title: Text("Word Not Found"),

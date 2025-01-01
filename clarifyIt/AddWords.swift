@@ -130,7 +130,7 @@ struct AddWordView: View {
                     // Show buttons only at the last displayMode
                     if displayMode == 2 {
                         HStack(spacing: 20) {
-                            NavigationLink(destination: MainView()) {
+                            NavigationLink(destination: MainView(selectedCategory: "")) {
                                 Text("Done")
                                     .font(.custom("SF Pro Display", size: 27))
                                     .fontWeight(.medium)
@@ -202,7 +202,6 @@ struct AddWordView: View {
                 speechManager = SpeechManager(isSpeakerFull: $isSpeakerFull)
                 synthesizer.delegate = speechManager
             }
-            .navigationBarBackButtonHidden(true)
         }
     }
 
