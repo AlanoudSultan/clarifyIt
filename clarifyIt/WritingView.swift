@@ -176,6 +176,3 @@ struct WritingView: View {
     }
 }
 
-#Preview {
-    WritingView(word: "Example")
-}

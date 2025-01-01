@@ -134,8 +134,4 @@ struct DailyQuizView: View {
     }
 }
 
-struct DailyQuizView_Previews: PreviewProvider {
-    static var previews: some View {
-        DailyQuizView()
-    }
-}
+
