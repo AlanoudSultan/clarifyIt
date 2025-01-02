@@ -69,8 +69,8 @@ struct MainView: View {
                             
                             VStack(alignment: .leading, spacing: 8) {
                                 //MARK: Edit double couts like this \(
-//                                Text("Hi \(dataModel.first!.name) 👋")
-                                Text("Hi Rama 👋")
+                                Text("Hi \(dataModel.first!.name) 👋")
+//                                Text("Hi Rama 👋")
                                     .font(.custom("SF Pro Text", size: 20))
                                     .fontWeight(.regular)
                                 

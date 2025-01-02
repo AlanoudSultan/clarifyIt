@@ -171,7 +171,7 @@ struct AddWordView: View {
                         TextField("Write here...", text: $word, axis: .vertical)
                             .font(.custom("SF Pro Text", size: 16)).fontWeight(.medium)
                             .padding()
-                            .frame(width: 350, height: 150, alignment: .top)
+                            .frame(width: 330, height: 150, alignment: .top)
                             .background(Color.gray1.opacity(0.5))
                             .cornerRadius(12)
                             .overlay(content: { RoundedRectangle(cornerRadius: 12).stroke(Color.dotsCO, lineWidth: 0.5) })
@@ -288,5 +288,8 @@ struct AddWordView: View {
         utterance.rate = 0.5
         synthesizer.speak(utterance)
     }
+}
+#Preview {
+    AddWordView()
 }
 
