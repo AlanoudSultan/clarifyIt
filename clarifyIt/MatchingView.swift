@@ -30,141 +30,135 @@ struct MatchingView: View {
     }
     
     var body: some View {
-        VStack {
-            HStack {
-                Spacer()
-                
-                ZStack {
-                    Circle()
-                        .stroke(Color.purpleMatch.opacity(0.2), lineWidth: 10)
-                        .frame(width: 60, height: 60)
-                    
-                    Circle()
-                        .trim(from: 0.0, to: CGFloat(remainingTime) / CGFloat(totalTime))
-                        .stroke(Color.purpleMatch, lineWidth: 10)
-                        .rotationEffect(.degrees(-90))
-                        .frame(width: 60, height: 60)
-                    
-                    Text("\(remainingTime)")
-                        .font(.system(size: 24, weight: .bold))
-                        .foregroundColor(remainingTime > 10 ? .purpleMatch : .red)
-                        .frame(width: 60, height: 60)
-                }
-                .padding(.top, 20)
-                .padding(.trailing, 20)
-            }
-            
-            // Box for the sentence at the top
-            TabView(selection: $currentIndex) {
-                ForEach(wordSentencePairs.indices, id: \.self) { index in
-                    VStack {
-                        Text(wordSentencePairs[index].sentence)
-                            .font(.system(size: 18, weight: .medium))
-                            .multilineTextAlignment(.center)
-                            .frame(width: UIScreen.main.bounds.width - 50, height: 214)
-                            .background(Color.white)
-                            .cornerRadius(12)
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 12)
-                                    .stroke(Color.purpleMatch, lineWidth: 5)
-                            )
-                            .padding(.top, 30)
+            VStack {
+                HStack {
+                    Spacer()
+                    ZStack {
+                        Circle()
+                            .stroke(Color.purple1.opacity(0.2), lineWidth: 10)
+                            .frame(width: 60, height: 60)
+                        
+                        Circle()
+                            .trim(from: 0.0, to: CGFloat(remainingTime) / CGFloat(totalTime))
+                            .stroke(Color.purple1, lineWidth: 10)
+                            .rotationEffect(.degrees(-90))
+                            .frame(width: 60, height: 60)
+                        
+                        Text("\(remainingTime)")
+                            .font(.system(size: 24, weight: .bold))
+                            .foregroundColor(remainingTime > 10 ? .purple1 : .red)
+                            .frame(width: 60, height: 60)
                     }
-                    .tag(index)
+                    .padding(.top, 20)
+                    .padding(.trailing, 20)
                 }
-            }
-            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-            .padding(.horizontal, 20)
-            .onChange(of: currentIndex) { newIndex in
-                answerStatus[newIndex] = nil
-            }
-
-            // Dots Indicator (Progress Bar)
-            HStack {
-                ForEach(0..<wordSentencePairs.count, id: \.self) { index in
-                    Circle()
-                        .fill(currentIndex == index ? Color.purple1 : Color.gray7)
-                        .frame(width: 10, height: 10)
-                        .onTapGesture {
-                            if answerStatus[currentIndex] == nil {  // Only allow navigating if no answer selected
-                                currentIndex = index
-                            }
+                
+                // Box for the sentence at the top
+                TabView(selection: $currentIndex) {
+                    ForEach(wordSentencePairs.indices, id: \.self) { index in
+                        VStack {
+                            Text(wordSentencePairs[index].sentence)
+                                .font(.system(size: 18, weight: .medium))
+                                .multilineTextAlignment(.center)
+                                .frame(width: UIScreen.main.bounds.width - 50, height: 214)
+                                .background(Color.clear)
+                                .cornerRadius(12)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 12)
+                                        .stroke(Color.purple1, lineWidth: 5)
+                                )
+                                .padding(.top, 30)
                         }
+                        .tag(index)
+                    }
                 }
-            }
-            .background(Color.gray.opacity(0.1))
-            .edgesIgnoringSafeArea(.all)
-            .padding(10)
-
-            Spacer()
-
-            // Box for options in a vertical stack
-            VStack(spacing: 20) {
-                ForEach(wordSentencePairs, id: \.word) { pair in
-                    VStack {
-                        Text(pair.word)
-                            .font(.system(size: 24, weight: .medium))
-                            .multilineTextAlignment(.center)
-                            .frame(width: UIScreen.main.bounds.width - 40, height: 80)
-                            .background(Color.white)
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 12)
-                                    .stroke(answerStatus[currentIndex] == pair.word ? (pair.word == wordSentencePairs[currentIndex].word ? Color.green : Color.red) : Color.purpleMatch, lineWidth: 2)
-                            )
-                            .cornerRadius(12)
-                            .padding(.horizontal)
+                .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+                .padding(.horizontal, 20)
+                .onChange(of: currentIndex) { newIndex in
+                    answerStatus[newIndex] = nil
+                }
+                
+                // Dots Indicator (Progress Bar)
+                HStack {
+                    ForEach(0..<wordSentencePairs.count, id: \.self) { index in
+                        Circle()
+                            .fill(currentIndex == index ? Color.purple1 : Color.gray7)
+                            .frame(width: 10, height: 10)
                             .onTapGesture {
-                                if answerStatus[currentIndex] == nil {
-                                    answerStatus[currentIndex] = pair.word
+                                if answerStatus[currentIndex] == nil {  // Only allow navigating if no answer selected
+                                    currentIndex = index
                                 }
                             }
                     }
                 }
-            }
-            .padding(.bottom, 50)
-
-            // Show buttons only after the last question is answered
-            if currentIndex == wordSentencePairs.count - 1 && answerStatus[currentIndex] != nil {
-
-                HStack {
-                    // Button for "Try Again"
-                    Button(action: {
-                        currentIndex = 0
-                        answerStatus = [:]
-                        startTimer()
-                    }) {
-                        Text("Try Again")
-                            .font(.system(size: 20, weight: .medium))
-                            .foregroundColor(.white)
-                            .padding()
-                            .frame(width: UIScreen.main.bounds.width / 2.5, height: 50)
-                            .background(Color.purpleMatch)
-                            .cornerRadius(12)
-                    }
-                    .padding(.leading, 10)
-                    
-                    Spacer()
-                    
-                    // Button for "Done"
-                    // change ContentView To MainView
-                    NavigationLink(destination: ContentView()) {
-                        Text("Done")
-                            .font(.system(size: 20, weight: .medium))
-                            .foregroundColor(.purpleMatch)
-                            .padding()
-                            .frame(width: UIScreen.main.bounds.width / 2.5, height: 50)
-                            .background(Color.white)
-                            .cornerRadius(12)
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 12)
-                                    .stroke(Color.purpleMatch, lineWidth: 1.5)
-                            )
-                    }
+                .edgesIgnoringSafeArea(.all)
+                .padding(10)
                 
-                    .padding(.trailing, 20)
+                Spacer()
+                
+                // Box for options in a vertical stack
+                VStack(spacing: 20) {
+                    ForEach(wordSentencePairs, id: \.word) { pair in
+                        VStack {
+                            Text(pair.word)
+                                .font(.system(size: 24, weight: .medium))
+                                .multilineTextAlignment(.center)
+                                .frame(width: UIScreen.main.bounds.width - 40, height: 80)
+                                .background(Color.white)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 12)
+                                        .stroke(answerStatus[currentIndex] == pair.word ? (pair.word == wordSentencePairs[currentIndex].word ? Color.green : Color.red) : Color.purple1, lineWidth: 2)
+                                )
+                                .cornerRadius(12)
+                                .padding(.horizontal)
+                                .onTapGesture {
+                                    if answerStatus[currentIndex] == nil {
+                                        answerStatus[currentIndex] = pair.word
+                                    }
+                                }
+                        }
+                    }
+                }
+                .padding(.bottom, 20)
+                
+                // Show buttons only after the last question is answered
+                if currentIndex == wordSentencePairs.count - 1 && answerStatus[currentIndex] != nil {
+                    HStack{
+                        // Button for "Try Again"
+                        Button(action: {
+                            currentIndex = 0
+                            answerStatus = [:]
+                            startTimer()
+                        }) {
+                            Text("Try Again")
+                                .font(.system(size: 20, weight: .medium))
+                                .foregroundColor(.white)
+                                .padding()
+                                .frame(width: UIScreen.main.bounds.width / 2.5, height: 50)
+                                .background(Color.purple1)
+                                .cornerRadius(12)
+                        }
+                        .padding(.leading, 10)
+                        Spacer()
+                        
+                        // Button for "Done"
+                        NavigationLink( destination: MainView()) {
+                            Text("Done")
+                                .font(.system(size: 20, weight: .medium))
+                                .foregroundColor(.purple1)
+                             .padding()
+                                .frame(width: UIScreen.main.bounds.width / 2.5, height: 50)
+                                .background(Color.clear)
+                                .cornerRadius(12)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 12)
+                                        .stroke(Color.purple1, lineWidth: 1.5)
+                                )
+                        }
+                        .padding(.trailing, 20)
+                    }  
                 }
             }
-        }
         .navigationBarHidden(true)
         .onAppear {
             startTimer()
@@ -180,9 +174,7 @@ struct MatchingView: View {
                 })
             )
         }
-                
     }
-                
 }
 
 

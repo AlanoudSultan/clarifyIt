@@ -11,11 +11,11 @@ import SwiftData
 
 struct MainView: View {
     @State private var progress = 0.2  // Initial progress set to 0%
-    @State var selectedCategory : String
+//    @State var selectedCategory : String
 //    @State private var wordsLearned: Int = 0
     
     @Query(sort:\ DataModel.name) var dataModel: [DataModel]
-    @State  var catIsPresented = false
+//    @State  var catIsPresented = false
 //    @State public var selectedCatgory: String
     
     @State private var isSheetPresented = false
@@ -112,18 +112,17 @@ struct MainView: View {
                             
                             ScrollView(.horizontal) {
                                 HStack {
-                                    NavigationLink(destination: WordOfTheDayView(selectedCategory: "Academic")) {
+                                    NavigationLink(destination:  WordOfTheDayView()) {
                                         HStack(spacing: 16) {
                                             LearnCategoryView(emoji: "📚", title: "Academic Words")
                                         }
                                     }
-                                    NavigationLink(destination: WordOfTheDayView(selectedCategory: "lett")) {
+                                                   NavigationLink(destination:  WordOfTheDayView()) {
                                         HStack(spacing: 16) {
                                             LearnCategoryView(emoji: "📜", title: "Literature Words")
                                         }
-                                        
                                     }
-                                    NavigationLink(destination: WordOfTheDayView(selectedCategory: "general")) {
+                                    NavigationLink(destination:  WordOfTheDayView()) {
                                         HStack(spacing: 16) {
                                             LearnCategoryView(emoji: "📰", title: "General Words")
                                         }
@@ -211,9 +210,7 @@ struct MainView: View {
             .navigationBarBackButtonHidden(true)
         }
     }
-
-
-struct LearnCategoryView: View {
+                                                   struct LearnCategoryView: View {
     var emoji: String
     var title: String
     
@@ -240,5 +237,5 @@ struct LearnCategoryView: View {
 }
 
 #Preview {
-    MainView(selectedCategory: "")
+    MainView()
 }

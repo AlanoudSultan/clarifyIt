@@ -14,7 +14,7 @@ struct clarifyItApp: App {
     var body: some Scene {
         WindowGroup {
             if hasLaunchedBefore {
-                MainView(selectedCategory: "")
+                MainView()
                         } else {
                             ContentView()
                         }

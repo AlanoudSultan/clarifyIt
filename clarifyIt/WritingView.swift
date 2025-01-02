@@ -8,6 +8,8 @@ struct WritingView: View {
     @State private var showAlert: Bool = false // To control alert visibility
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.dismiss) var dismiss
+    @State private var isActive = false
+
     var body: some View {
         VStack {
             // Back Button
@@ -84,25 +86,45 @@ struct WritingView: View {
                             .background(Color("PurpleMatch"))
                             .cornerRadius(15)
                     }
-
+                    
                     // Done Button
-                    NavigationLink(destination: MainView(selectedCategory: "")) {
-                        
-                        Text("Done")
-                            .font(.custom("SF Pro Display", size: 27))
-                            .fontWeight(.medium)
-                            .foregroundColor(Color("PurpleMatch"))
-                            .padding()
-                            .frame(width: 180, height: 70)
-                            .background(.white)
-                            .cornerRadius(15)
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 15)
-                                    .stroke(Color("PurpleMatch"), lineWidth: 2)
+                    NavigationLink(destination: MainView(), isActive: $isActive) {
+                        Button(action: {
+                            dismiss()
+                            isActive = true
+                        }, label: {
+                            Text("Done")
+                                .font(.custom("SF Pro Display", size: 27))
+                                .fontWeight(.medium)
+                                .foregroundColor(Color("PurpleMatch"))
+                                .padding()
+                                .frame(width: 180, height: 70)
+                                .background(.white)
+                                .cornerRadius(15)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 15)
+                                        .stroke(Color("PurpleMatch"), lineWidth: 2)
                                 )
-                           
+                        })
                     }
                 }
+//                    NavigationLink(destination: MainView()) {
+                        
+//                        Text("Done")
+//                            .font(.custom("SF Pro Display", size: 27))
+//                            .fontWeight(.medium)
+//                            .foregroundColor(Color("PurpleMatch"))
+//                            .padding()
+//                            .frame(width: 180, height: 70)
+//                            .background(.white)
+//                            .cornerRadius(15)
+//                            .overlay(
+//                                RoundedRectangle(cornerRadius: 15)
+//                                    .stroke(Color("PurpleMatch"), lineWidth: 2)
+//                                )
+                           
+//                    }
+                
                 .padding(.bottom)
 
             } else {
@@ -133,6 +155,7 @@ struct WritingView: View {
                 dismissButton: .default(Text("OK"))
             )
         }
+        .navigationBarBackButtonHidden(true)
     }
 
     private func checkSentence() {

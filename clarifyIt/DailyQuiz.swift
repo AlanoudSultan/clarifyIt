@@ -40,16 +40,20 @@ struct DailyQuizView: View {
                 Button(action: {
                     selectedQuiz = "Matching"  // Select Matching
                 }) {
-                    HStack(spacing: 10) { // Add spacing between icon and text
-                        Image(systemName: "checkmark.rectangle.stack")
-                            .font(.system(size: 23, weight: .medium))
-                            .foregroundColor(.accentColor)
-
+                    ZStack { // Add spacing between icon and text
+                        
                         Text("Matching")
                             .font(.custom("SF Pro", size: 24))
                             .fontWeight(.medium)
                             .foregroundColor(.accentColor)
-                            .frame(width: 120, height: 75)
+                        
+                        HStack{
+                            Image(systemName: "checkmark.rectangle.stack")
+                                .font(.system(size: 23, weight: .medium))
+                                .foregroundColor(.accentColor)
+                            Spacer()
+                        }
+                        .padding(.horizontal)
                     }
                     .frame(width: 327, height: 75)
                     .background(Color.purple3.opacity(0.2)) // Background color
@@ -65,16 +69,21 @@ struct DailyQuizView: View {
                 Button(action: {
                     selectedQuiz = "Writing"  // Select Writing
                 }) {
-                    HStack(spacing: 10) { // Add spacing between icon and text
-                        Image(systemName: "pencil.line")
-                            .font(.system(size: 23, weight: .medium))
-                            .foregroundColor(.accentColor)
-
+                    ZStack { // Add spacing between icon and text
                         Text("Writing")
                             .font(.custom("SF Pro", size: 24))
                             .fontWeight(.medium)
                             .foregroundColor(.accentColor)
                             .frame(width: 110, height: 75)
+                        
+                        HStack(spacing: 10) { // Add spacing between icon and text
+                            Image(systemName: "pencil.line")
+                                .font(.system(size: 23, weight: .medium))
+                                .foregroundColor(.accentColor)
+                            
+                            Spacer()
+                        }
+                        .padding(.horizontal)
                     }
                     .frame(width: 327, height: 75)
                     .background(Color.purple3.opacity(0.2)) // Background color
@@ -135,3 +144,6 @@ struct DailyQuizView: View {
 }
 
 
+#Preview {
+    DailyQuizView()
+}

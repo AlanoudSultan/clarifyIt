@@ -130,7 +130,7 @@ struct AddWordView: View {
                     // Show buttons only at the last displayMode
                     if displayMode == 2 {
                         HStack(spacing: 20) {
-                            NavigationLink(destination: MainView(selectedCategory: "")) {
+                            NavigationLink(destination: MainView()) {
                                 Text("Done")
                                     .font(.custom("SF Pro Display", size: 27))
                                     .fontWeight(.medium)
@@ -203,6 +203,8 @@ struct AddWordView: View {
                 synthesizer.delegate = speechManager
             }
         }
+        .navigationBarHidden(true)
+        .navigationBarBackButtonHidden(true)
     }
 
     // Fetch word details using the API

@@ -11,14 +11,14 @@ import _SwiftData_SwiftUI
 
 
 struct WordOfTheDayView: View {
-    var selectedCategory: String
+//    var selectedCategory: String
     @Query(sort:\ DataModel.name) var dataModel: [DataModel]
     
     @ObservedObject var data = DataLoader() // Observing the data source
     @AppStorage("currentIndex") private var currentIndex = 0 // Stores the current word index
     @AppStorage("displayMode") private var displayMode = 0 // Stores the current display mode (meaning, synonyms, sentence)
     
-    @State private var filteredWords: [Word] = []
+//    @State private var filteredWords: [Word] = []
     @State private var isLearningComplete = false // Tracks whether learning is complete
     @State private var isSpeakerFull = false // Tracks speaker state
     private let synthesizer = AVSpeechSynthesizer() // Text-to-speech synthesizer
@@ -30,7 +30,7 @@ struct WordOfTheDayView: View {
             // Top bar with close button and speaker button
             HStack {
                 // Navigation to MainView
-                NavigationLink(destination: MainView(selectedCategory: "").navigationBarBackButtonHidden(true)) {
+                NavigationLink(destination: MainView().navigationBarBackButtonHidden(true)) {
                     Image(systemName: "xmark")
                         .font(.title)
                         .foregroundColor(Color.gray)
@@ -41,8 +41,8 @@ struct WordOfTheDayView: View {
                 
                 // Speaker button to read out the word
                 Button(action: {
-                    if !filteredWords.isEmpty {
-                        speak(text: filteredWords[currentIndex].Word)
+                    if !data.literature.isEmpty {
+                        speak(text: data.literature[currentIndex].Word)
                         isSpeakerFull.toggle()
                     }
                 }) {
@@ -71,7 +71,7 @@ struct WordOfTheDayView: View {
             
             // Main content area
             VStack(spacing: 30) {
-                if !filteredWords.isEmpty {
+                if !data.literature.isEmpty {
                     // Ensure the currentIndex is within bounds
                     Text(data.literature[currentIndex].Word)
                         .font(.custom("SF Pro Display", size: 45))
@@ -81,21 +81,21 @@ struct WordOfTheDayView: View {
                     
                     // Display meaning, synonyms, or example sentence based on the mode
                     if displayMode == 0 {
-                        Text(filteredWords[currentIndex].Levels.Low.Meaning)
+                        Text(data.literature[currentIndex].Levels.Low.Meaning)
                             .font(.custom("SF Pro Display", size: 28))
                             .fontWeight(.regular)
                             .lineSpacing(5)
                             .multilineTextAlignment(.center)
                             .padding()
                     } else if displayMode == 1 {
-                        Text(filteredWords[currentIndex].Levels.Low.Synonyms.joined(separator: "\n"))
+                        Text(data.literature[currentIndex].Levels.Low.Synonyms.joined(separator: "\n"))
                             .font(.custom("SF Pro Display", size: 30))
                             .fontWeight(.regular)
                             .lineSpacing(10)
                             .multilineTextAlignment(.center)
                             .padding()
                     } else if displayMode == 2 {
-                        Text(filteredWords[currentIndex].Levels.Low.Sentence)
+                        Text(data.literature[currentIndex].Levels.Low.Sentence)
                             .font(.custom("SF Pro Display", size: 28))
                             .fontWeight(.regular)
                             .lineSpacing(5)
@@ -120,7 +120,7 @@ struct WordOfTheDayView: View {
             HStack {
                 ForEach(0..<3, id: \.self) { index in
                     Circle()
-                        .fill(index == (displayMode) ? Color("PurpleMatch") : Color.gray)
+                        .fill(index == (displayMode % 3) ? Color("PurpleMatch") : Color.gray)
                         .frame(width: 10, height: 10)
                 }
             }
@@ -151,24 +151,14 @@ struct WordOfTheDayView: View {
         .onAppear {
             speechManager = SpeechManager(isSpeakerFull: $isSpeakerFull)
             synthesizer.delegate = speechManager
-            filterWordsByCategory()
+            if !data.literature.isEmpty {
+                currentIndex = (currentIndex + 1) % data.literature.count
+            }
         }
-        .navigationBarBackButtonHidden(false)
-        
+        .navigationBarHidden(true)
+        .navigationBarBackButtonHidden(true)
     }
     
-    private func filterWordsByCategory() {
-           switch selectedCategory {
-           case "Literature":
-               filteredWords = data.literature
-           case "Academic":
-               filteredWords = data.academic
-           case "General":
-               filteredWords = data.general
-           default:
-               filteredWords = []
-           }
-       }
     
     // Header text based on the display mode
     private var headerText: String {
@@ -189,7 +179,7 @@ struct WordOfTheDayView: View {
         HStack(spacing: 20) {
             // Continue to the next word
             Button(action: {
-                currentIndex = (currentIndex + 1) % filteredWords.count
+                currentIndex = (currentIndex + 1) % data.literature.count
                 displayMode = 0
             }) {
                 Text("Continue")
@@ -203,7 +193,7 @@ struct WordOfTheDayView: View {
             }
             
             // Navigate to the Quiz view
-            NavigationLink(destination: WritingView(word: filteredWords[currentIndex].Word)) {
+            NavigationLink(destination: WritingView(word: data.literature[currentIndex].Word)) {
                 Text("Quiz")
                     .font(.custom("SF Pro Display", size: 27))
                     .fontWeight(.medium)
@@ -234,7 +224,7 @@ struct WordOfTheDayView: View {
 struct WordOfTheDayView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            WordOfTheDayView(selectedCategory: "")
+            WordOfTheDayView()
         }
     }
 }
