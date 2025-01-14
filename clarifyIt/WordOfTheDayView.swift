@@ -30,13 +30,13 @@ struct WordOfTheDayView: View {
             // Top bar with close button and speaker button
             HStack {
                 // Navigation to MainView
-                NavigationLink(destination: MainView().navigationBarBackButtonHidden(true)) {
-                    Image(systemName: "xmark")
-                        .font(.title)
-                        .foregroundColor(Color.gray)
-                }
-                .padding()
-                
+//                NavigationLink(destination: MainView().navigationBarBackButtonHidden(true)) {
+//                    Image(systemName: "xmark")
+//                        .font(.title)
+//                        .foregroundColor(Color.gray)
+//                }
+//                .padding()
+//                
                 Spacer()
                 
                 // Speaker button to read out the word
@@ -155,8 +155,8 @@ struct WordOfTheDayView: View {
                 currentIndex = (currentIndex + 1) % data.literature.count
             }
         }
-        .navigationBarHidden(true)
-        .navigationBarBackButtonHidden(true)
+//        .navigationBarHidden(true)
+        .navigationBarBackButtonHidden(false)
     }
     
     

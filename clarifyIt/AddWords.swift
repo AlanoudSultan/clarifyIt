@@ -28,21 +28,21 @@ struct AddWordView: View {
             VStack(spacing: 15) {
                 HStack {
                     // Back Button or Close Button based on the view state
-                    if showResultPage {
-                        Button(action: {
-                            showResultPage = false // Go back to input view
-                        }) {
-                            Image(systemName: "xmark")
-                                .font(.title)
-                                .foregroundColor(.gray)
-                        }
-                    } else {
-                        Button(action: {
-                            presentationMode.wrappedValue.dismiss() // Dismiss the view
-                        }) {
-                            
-                        }
-                    }
+//                    if showResultPage {
+//                        Button(action: {
+//                            showResultPage = false // Go back to input view
+//                        }) {
+//                            Image(systemName: "xmark")
+//                                .font(.title)
+//                                .foregroundColor(.gray)
+//                        }
+//                    } else {
+//                        Button(action: {
+//                            presentationMode.wrappedValue.dismiss() // Dismiss the view
+//                        }) {
+//                            
+//                        }
+//                    }
                     Spacer()
 
                     // Speaker Button to play the word
@@ -130,7 +130,9 @@ struct AddWordView: View {
                     // Show buttons only at the last displayMode
                     if displayMode == 2 {
                         HStack(spacing: 20) {
-                            NavigationLink(destination: MainView()) {
+                            Button(action: {
+                                presentationMode.wrappedValue.dismiss()
+                            }) {
                                 Text("Done")
                                     .font(.custom("SF Pro Display", size: 27))
                                     .fontWeight(.medium)
@@ -203,8 +205,8 @@ struct AddWordView: View {
                 synthesizer.delegate = speechManager
             }
         }
-        .navigationBarHidden(true)
-        .navigationBarBackButtonHidden(true)
+//        .navigationBarHidden(true)
+        .navigationBarBackButtonHidden(false)
     }
 
     // Fetch word details using the API
